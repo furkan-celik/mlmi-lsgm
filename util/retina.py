@@ -39,12 +39,13 @@ class RetinaDataset(data.Dataset):
             img = Image.open(f)
             img.load()
         img = img.convert("RGB")
-        img = ImageOps.grayscale(img)
         target = [0]
         if self.transform is not None:
             img = self.transform(img)
 
-        return img, target
+        arr = np.array(img)
+        arr = arr.astype(np.float32)
+        return arr, target
 
     def __len__(self):
         return len(self.local_images)

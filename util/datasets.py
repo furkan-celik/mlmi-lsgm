@@ -7,8 +7,6 @@
 
 """Code for getting the data loaders."""
 
-import albumentations as A
-from albumentations.pytorch import ToTensorV2
 import torch
 import torchvision.datasets as dset
 import torchvision.transforms as transforms
@@ -269,10 +267,10 @@ def _data_transforms_generic(size):
 
 
 def _data_transforms_retina(resize_res, crop_res):
-    train_transform = A.Compose([
-        A.SmallestMaxSize(max_size=resize_res),
-        A.RandomCrop(height=crop_res, width=crop_res),
-        ToTensorV2()
+    train_transform = transforms.Compose([
+        transforms.Resize(resize_res),
+        transforms.RandomCrop(crop_res),
+        transforms.ToTensor(),
     ])
 
     valid_transform = train_transform

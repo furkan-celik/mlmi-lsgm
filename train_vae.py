@@ -355,6 +355,10 @@ if __name__ == '__main__':
                         help='which dataset to use')
     parser.add_argument('--data', type=str, default='/tmp/nvae-diff/data',
                         help='location of the data corpus')
+    parser.add_argument('--resize', type=int, default=256,
+                        help='resize to this resolution')
+    parser.add_argument('--crop', type=int, default=256,
+                        help='crop to this resolution')
     # optimization
     parser.add_argument('--batch_size', type=int, default=64,
                         help='batch size per GPU')
