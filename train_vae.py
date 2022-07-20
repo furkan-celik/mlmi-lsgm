@@ -53,7 +53,7 @@ def main(args):
     sn_calculator.add_bn_layers(vae)
 
     grad_scalar = GradScaler(2**10)
-    bpd_coeff = utils.get_bpd_coeff(args.dataset)
+    bpd_coeff = utils.get_bpd_coeff(args.dataset, args.crop)
 
     # if continue training from a checkpoint
     # useful when training is interrupted.
@@ -350,7 +350,8 @@ if __name__ == '__main__':
     # data
     parser.add_argument('--dataset', type=str, default='cifar10',
                         choices=['cifar10', 'celeba_64', 'celeba_256', 'mnist', 'omniglot',
-                                 'imagenet_32', 'ffhq', 'lsun_bedroom_128', 'lsun_church_256'],
+                                 'imagenet_32', 'ffhq', 'lsun_bedroom_128', 'lsun_church_256',
+                                 'retina'],
                         help='which dataset to use')
     parser.add_argument('--data', type=str, default='/tmp/nvae-diff/data',
                         help='location of the data corpus')

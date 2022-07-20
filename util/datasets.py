@@ -7,10 +7,13 @@
 
 """Code for getting the data loaders."""
 
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
 import torch
 import torchvision.datasets as dset
 import torchvision.transforms as transforms
 from util.lmdb_datasets import LMDBDataset
+from util.retina import RetinaDataset
 from thirdparty.lsun import LSUN, LSUNClass
 import os
 import urllib
@@ -43,7 +46,7 @@ class CropCelebA64(object):
 
 def get_loaders(args):
     """Get data loaders for required dataset."""
-    return get_loaders_eval(args.dataset, args.data, args.distributed, args.batch_size)
+    return get_loaders_eval(args.dataset, args.data, args.resize, args.crop, args.distributed, args.batch_size)
 
 
 def download_omniglot(data_dir):
@@ -89,7 +92,7 @@ class OMNIGLOT(Dataset):
         return len(self.data)
 
 
-def get_loaders_eval(dataset, root, distributed, batch_size, augment=True, drop_last_train=True, shuffle_train=True,
+def get_loaders_eval(dataset, root, resize, crop, distributed, batch_size, augment=True, drop_last_train=True, shuffle_train=True,
                      binarize_binary_datasets=True):
     if dataset == 'cifar10':
         num_classes = 10
@@ -115,6 +118,11 @@ def get_loaders_eval(dataset, root, distributed, batch_size, augment=True, drop_
         train_data, valid_data = load_omniglot(root)
         train_data = OMNIGLOT(train_data, train_transform)
         valid_data = OMNIGLOT(valid_data, valid_transform)
+    elif dataset == 'retina':
+        num_classes = 1
+        train_transform, valid_transform = _data_transforms_retina(resize, crop)
+        train_data = RetinaDataset(root=root + 'train/', transform=train_transform)
+        valid_data = RetinaDataset(root=root + 'val/', transform=valid_transform)
     elif dataset.startswith('celeba'):
         if dataset == 'celeba_64':
             resize = 64
@@ -256,6 +264,18 @@ def _data_transforms_generic(size):
         transforms.Resize(size),
         transforms.ToTensor(),
     ])
+
+    return train_transform, valid_transform
+
+
+def _data_transforms_retina(resize_res, crop_res):
+    train_transform = A.Compose([
+        A.SmallestMaxSize(max_size=resize_res),
+        A.RandomCrop(height=crop_res, width=crop_res),
+        ToTensorV2()
+    ])
+
+    valid_transform = train_transform
 
     return train_transform, valid_transform
 
