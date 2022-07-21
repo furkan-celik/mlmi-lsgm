@@ -271,6 +271,7 @@ def _data_transforms_retina(resize_res, crop_res):
         transforms.Resize(resize_res),
         transforms.RandomCrop(crop_res),
         transforms.ToTensor(),
+        Binarize()
     ])
 
     valid_transform = train_transform

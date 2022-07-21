@@ -1,4 +1,4 @@
-python train_vae.py --data ../data/raw/256/ --root ../MNIST/ --save ../save_dir/vae --dataset retina \
+python train_vae.py --data ../data/raw/kaggle/kermany2018/OCT2017/ --root ../MNIST/ --save ../save_dir/vae --dataset retina \
       --resize 256 --crop 256 \
       --batch_size 2 --epochs 200 --num_latent_scales 1 --num_groups_per_scale 2 --num_postprocess_cells 3 \
       --num_preprocess_cells 3 --num_cell_per_cond_enc 1 --num_cell_per_cond_dec 1 --num_latent_per_group 20 \

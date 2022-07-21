@@ -179,8 +179,8 @@ def main(args):
         writer.add_scalar('train/loss_epoch', train_obj, global_step)
 
         # generate samples less frequently
-        num_evaluations_nll = 20
-        num_evaluations_fid = 20
+        num_evaluations_nll = 1
+        num_evaluations_fid = 1
         num_saves = 100           # more frequent saves
         eval_freq_nll = max(args.epochs // num_evaluations_nll, 1)
         eval_freq_fid = max(args.epochs // num_evaluations_fid, 1)
