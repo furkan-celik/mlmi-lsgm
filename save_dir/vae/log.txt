@@ -1,0 +1,1107 @@
+2022-07-21 07:40:53,625 (Elapsed: 00:00:00) args = Namespace(arch_instance='res_mbconv', autocast_eval=True, autocast_train=True, batch_size=2, channel_mult=[1, 2, 2], cont_training=False, crop=256, data='../data/raw/256/', dataset='retina', decoder_dist='bin', distributed=True, epochs=200, global_rank=0, kl_anneal_portion=1.0, kl_const_coeff=0.0001, kl_const_portion=0.0001, kl_max_coeff=0.7, learning_rate_min_vae=0.0001, learning_rate_vae=0.01, local_rank=0, log_sig_q_scale=5.0, master_address='127.0.0.1', node_rank=0, num_cell_per_cond_dec=1, num_cell_per_cond_enc=1, num_channels_dec=64, num_channels_enc=64, num_groups_per_scale=2, num_latent_per_group=20, num_latent_scales=1, num_nf=0, num_postprocess_blocks=2, num_postprocess_cells=3, num_preprocess_blocks=2, num_preprocess_cells=3, num_proc_node=1, num_process_per_node=1, num_total_iter=400, num_x_bits=8, progressive_input_vae='none', resize=256, root='../MNIST/', save='../MNIST//../save_dir/vae', seed=1, use_se=True, warmup_epochs=5, weight_decay=0.0003, weight_decay_norm=0.01, weight_decay_norm_anneal=False, weight_decay_norm_init=10.0)
+2022-07-21 07:40:57,680 (Elapsed: 00:00:04) VAE: param size = 3.523070M 
+2022-07-21 07:40:57,791 (Elapsed: 00:00:04) epoch 0
+2022-07-21 07:43:04,840 (Elapsed: 00:00:00) args = Namespace(arch_instance='res_mbconv', autocast_eval=True, autocast_train=True, batch_size=2, channel_mult=[1, 2, 2], cont_training=False, crop=256, data='../data/raw/256/', dataset='retina', decoder_dist='bin', distributed=True, epochs=200, global_rank=0, kl_anneal_portion=1.0, kl_const_coeff=0.0001, kl_const_portion=0.0001, kl_max_coeff=0.7, learning_rate_min_vae=0.0001, learning_rate_vae=0.01, local_rank=0, log_sig_q_scale=5.0, master_address='127.0.0.1', node_rank=0, num_cell_per_cond_dec=1, num_cell_per_cond_enc=1, num_channels_dec=64, num_channels_enc=64, num_groups_per_scale=2, num_latent_per_group=20, num_latent_scales=1, num_nf=0, num_postprocess_blocks=2, num_postprocess_cells=3, num_preprocess_blocks=2, num_preprocess_cells=3, num_proc_node=1, num_process_per_node=1, num_total_iter=400, num_x_bits=8, progressive_input_vae='none', resize=256, root='../MNIST/', save='../MNIST//../save_dir/vae', seed=1, use_se=True, warmup_epochs=5, weight_decay=0.0003, weight_decay_norm=0.01, weight_decay_norm_anneal=False, weight_decay_norm_init=10.0)
+2022-07-21 07:43:08,592 (Elapsed: 00:00:03) VAE: param size = 3.523070M 
+2022-07-21 07:43:08,667 (Elapsed: 00:00:03) epoch 0
+2022-07-21 07:43:14,666 (Elapsed: 00:00:09) train_loss 137208.375000
+2022-07-21 07:43:14,668 (Elapsed: 00:00:09) epoch 1
+2022-07-21 07:43:16,024 (Elapsed: 00:00:11) train_loss 137252.000000
+2022-07-21 07:43:16,025 (Elapsed: 00:00:11) epoch 2
+2022-07-21 07:43:17,363 (Elapsed: 00:00:12) train_loss 137211.593750
+2022-07-21 07:43:17,364 (Elapsed: 00:00:12) epoch 3
+2022-07-21 07:43:18,721 (Elapsed: 00:00:13) train_loss 137221.156250
+2022-07-21 07:43:18,722 (Elapsed: 00:00:13) epoch 4
+2022-07-21 07:43:20,080 (Elapsed: 00:00:15) train_loss 137266.156250
+2022-07-21 07:43:27,115 (Elapsed: 00:00:22) val, step: 2, NELBO: 139836.718750, neg Log p 139688.609375
+2022-07-21 07:43:27,116 (Elapsed: 00:00:22) valid bpd nelbo 1.026112
+2022-07-21 07:43:27,116 (Elapsed: 00:00:22) valid bpd log p 1.025025
+2022-07-21 07:43:27,119 (Elapsed: 00:00:22) saving the model.
+2022-07-21 07:43:27,177 (Elapsed: 00:00:22) epoch 5
+2022-07-21 07:43:28,580 (Elapsed: 00:00:23) train_loss 145119.625000
+2022-07-21 07:43:28,585 (Elapsed: 00:00:23) epoch 6
+2022-07-21 07:43:29,951 (Elapsed: 00:00:25) train_loss 402529.031250
+2022-07-21 07:43:29,952 (Elapsed: 00:00:25) epoch 7
+2022-07-21 07:43:31,331 (Elapsed: 00:00:26) train_loss 117280.046875
+2022-07-21 07:43:31,332 (Elapsed: 00:00:26) epoch 8
+2022-07-21 07:43:32,704 (Elapsed: 00:00:27) train_loss 110951.125000
+2022-07-21 07:43:32,705 (Elapsed: 00:00:27) epoch 9
+2022-07-21 07:43:34,057 (Elapsed: 00:00:29) train_loss 104615.437500
+2022-07-21 07:43:37,422 (Elapsed: 00:00:32) val, step: 2, NELBO: 181048.484375, neg Log p 180441.656250
+2022-07-21 07:43:37,423 (Elapsed: 00:00:32) valid bpd nelbo 1.328520
+2022-07-21 07:43:37,423 (Elapsed: 00:00:32) valid bpd log p 1.324068
+2022-07-21 07:43:37,425 (Elapsed: 00:00:32) epoch 10
+2022-07-21 07:43:38,818 (Elapsed: 00:00:33) train_loss 92946.406250
+2022-07-21 07:43:38,819 (Elapsed: 00:00:33) epoch 11
+2022-07-21 07:43:40,216 (Elapsed: 00:00:35) train_loss 85438.921875
+2022-07-21 07:43:40,218 (Elapsed: 00:00:35) epoch 12
+2022-07-21 07:43:41,587 (Elapsed: 00:00:36) train_loss 87571.968750
+2022-07-21 07:43:41,588 (Elapsed: 00:00:36) epoch 13
+2022-07-21 07:43:42,949 (Elapsed: 00:00:38) train_loss 86643.343750
+2022-07-21 07:43:42,950 (Elapsed: 00:00:38) epoch 14
+2022-07-21 07:43:44,345 (Elapsed: 00:00:39) train_loss 80965.125000
+2022-07-21 07:43:47,720 (Elapsed: 00:00:42) val, step: 2, NELBO: 155434.625000, neg Log p 154912.828125
+2022-07-21 07:43:47,721 (Elapsed: 00:00:42) valid bpd nelbo 1.140568
+2022-07-21 07:43:47,721 (Elapsed: 00:00:42) valid bpd log p 1.136739
+2022-07-21 07:43:47,723 (Elapsed: 00:00:42) epoch 15
+2022-07-21 07:43:49,116 (Elapsed: 00:00:44) train_loss 81132.609375
+2022-07-21 07:43:49,117 (Elapsed: 00:00:44) epoch 16
+2022-07-21 07:43:50,492 (Elapsed: 00:00:45) train_loss 80259.750000
+2022-07-21 07:43:50,493 (Elapsed: 00:00:45) epoch 17
+2022-07-21 07:43:51,860 (Elapsed: 00:00:47) train_loss 78651.726562
+2022-07-21 07:43:51,861 (Elapsed: 00:00:47) epoch 18
+2022-07-21 07:43:53,234 (Elapsed: 00:00:48) train_loss 77570.828125
+2022-07-21 07:43:53,235 (Elapsed: 00:00:48) epoch 19
+2022-07-21 07:43:54,625 (Elapsed: 00:00:49) train_loss 76598.875000
+2022-07-21 07:43:58,031 (Elapsed: 00:00:53) val, step: 2, NELBO: 107678.976562, neg Log p 107206.054688
+2022-07-21 07:43:58,032 (Elapsed: 00:00:53) valid bpd nelbo 0.790140
+2022-07-21 07:43:58,032 (Elapsed: 00:00:53) valid bpd log p 0.786670
+2022-07-21 07:43:58,035 (Elapsed: 00:00:53) saving the model.
+2022-07-21 07:43:58,168 (Elapsed: 00:00:53) epoch 20
+2022-07-21 07:43:59,586 (Elapsed: 00:00:54) train_loss 75549.234375
+2022-07-21 07:43:59,587 (Elapsed: 00:00:54) epoch 21
+2022-07-21 07:44:01,000 (Elapsed: 00:00:56) train_loss 74819.734375
+2022-07-21 07:44:01,001 (Elapsed: 00:00:56) epoch 22
+2022-07-21 07:44:02,399 (Elapsed: 00:00:57) train_loss 74094.968750
+2022-07-21 07:44:02,400 (Elapsed: 00:00:57) epoch 23
+2022-07-21 07:44:03,796 (Elapsed: 00:00:58) train_loss 73705.640625
+2022-07-21 07:44:03,798 (Elapsed: 00:00:58) epoch 24
+2022-07-21 07:44:05,175 (Elapsed: 00:01:00) train_loss 73218.109375
+2022-07-21 07:44:08,608 (Elapsed: 00:01:03) val, step: 2, NELBO: 91259.265625, neg Log p 91031.007812
+2022-07-21 07:44:08,609 (Elapsed: 00:01:03) valid bpd nelbo 0.669654
+2022-07-21 07:44:08,609 (Elapsed: 00:01:03) valid bpd log p 0.667979
+2022-07-21 07:44:08,611 (Elapsed: 00:01:03) saving the model.
+2022-07-21 07:44:08,743 (Elapsed: 00:01:03) epoch 25
+2022-07-21 07:44:10,145 (Elapsed: 00:01:05) train_loss 72680.218750
+2022-07-21 07:44:10,146 (Elapsed: 00:01:05) epoch 26
+2022-07-21 07:44:11,527 (Elapsed: 00:01:06) train_loss 72290.914062
+2022-07-21 07:44:11,528 (Elapsed: 00:01:06) epoch 27
+2022-07-21 07:44:12,909 (Elapsed: 00:01:08) train_loss 71673.250000
+2022-07-21 07:44:12,910 (Elapsed: 00:01:08) epoch 28
+2022-07-21 07:44:14,296 (Elapsed: 00:01:09) train_loss 71673.718750
+2022-07-21 07:44:14,297 (Elapsed: 00:01:09) epoch 29
+2022-07-21 07:44:15,664 (Elapsed: 00:01:10) train_loss 71007.328125
+2022-07-21 07:44:19,123 (Elapsed: 00:01:14) val, step: 2, NELBO: 84576.000000, neg Log p 84370.523438
+2022-07-21 07:44:19,123 (Elapsed: 00:01:14) valid bpd nelbo 0.620612
+2022-07-21 07:44:19,123 (Elapsed: 00:01:14) valid bpd log p 0.619105
+2022-07-21 07:44:19,126 (Elapsed: 00:01:14) saving the model.
+2022-07-21 07:44:19,265 (Elapsed: 00:01:14) epoch 30
+2022-07-21 07:44:20,647 (Elapsed: 00:01:15) train_loss 71387.750000
+2022-07-21 07:44:20,648 (Elapsed: 00:01:15) epoch 31
+2022-07-21 07:44:22,017 (Elapsed: 00:01:17) train_loss 70682.851562
+2022-07-21 07:44:22,018 (Elapsed: 00:01:17) epoch 32
+2022-07-21 07:44:23,424 (Elapsed: 00:01:18) train_loss 70800.687500
+2022-07-21 07:44:23,425 (Elapsed: 00:01:18) epoch 33
+2022-07-21 07:44:24,808 (Elapsed: 00:01:19) train_loss 70457.703125
+2022-07-21 07:44:24,809 (Elapsed: 00:01:19) epoch 34
+2022-07-21 07:44:26,196 (Elapsed: 00:01:21) train_loss 70453.187500
+2022-07-21 07:44:29,697 (Elapsed: 00:01:24) val, step: 2, NELBO: 80769.148438, neg Log p 80537.062500
+2022-07-21 07:44:29,697 (Elapsed: 00:01:24) valid bpd nelbo 0.592678
+2022-07-21 07:44:29,698 (Elapsed: 00:01:24) valid bpd log p 0.590975
+2022-07-21 07:44:29,700 (Elapsed: 00:01:24) saving the model.
+2022-07-21 07:44:29,831 (Elapsed: 00:01:24) epoch 35
+2022-07-21 07:44:31,223 (Elapsed: 00:01:26) train_loss 70149.062500
+2022-07-21 07:44:31,224 (Elapsed: 00:01:26) epoch 36
+2022-07-21 07:44:32,616 (Elapsed: 00:01:27) train_loss 69950.242188
+2022-07-21 07:44:32,616 (Elapsed: 00:01:27) epoch 37
+2022-07-21 07:44:33,987 (Elapsed: 00:01:29) train_loss 69697.546875
+2022-07-21 07:44:33,988 (Elapsed: 00:01:29) epoch 38
+2022-07-21 07:44:35,369 (Elapsed: 00:01:30) train_loss 69639.453125
+2022-07-21 07:44:35,370 (Elapsed: 00:01:30) epoch 39
+2022-07-21 07:44:36,789 (Elapsed: 00:01:31) train_loss 69366.078125
+2022-07-21 07:44:40,320 (Elapsed: 00:01:35) val, step: 2, NELBO: 78311.875000, neg Log p 78163.812500
+2022-07-21 07:44:40,321 (Elapsed: 00:01:35) valid bpd nelbo 0.574647
+2022-07-21 07:44:40,321 (Elapsed: 00:01:35) valid bpd log p 0.573560
+2022-07-21 07:44:40,323 (Elapsed: 00:01:35) saving the model.
+2022-07-21 07:44:40,455 (Elapsed: 00:01:35) epoch 40
+2022-07-21 07:44:41,876 (Elapsed: 00:01:37) train_loss 69374.851562
+2022-07-21 07:44:41,876 (Elapsed: 00:01:37) epoch 41
+2022-07-21 07:44:43,275 (Elapsed: 00:01:38) train_loss 69081.750000
+2022-07-21 07:44:43,276 (Elapsed: 00:01:38) epoch 42
+2022-07-21 07:44:44,660 (Elapsed: 00:01:39) train_loss 69190.984375
+2022-07-21 07:44:44,661 (Elapsed: 00:01:39) epoch 43
+2022-07-21 07:44:46,054 (Elapsed: 00:01:41) train_loss 68852.062500
+2022-07-21 07:44:46,055 (Elapsed: 00:01:41) epoch 44
+2022-07-21 07:44:47,466 (Elapsed: 00:01:42) train_loss 68678.343750
+2022-07-21 07:44:51,047 (Elapsed: 00:01:46) val, step: 2, NELBO: 76717.898438, neg Log p 76555.273438
+2022-07-21 07:44:51,047 (Elapsed: 00:01:46) valid bpd nelbo 0.562950
+2022-07-21 07:44:51,048 (Elapsed: 00:01:46) valid bpd log p 0.561757
+2022-07-21 07:44:51,050 (Elapsed: 00:01:46) saving the model.
+2022-07-21 07:44:51,187 (Elapsed: 00:01:46) epoch 45
+2022-07-21 07:44:52,584 (Elapsed: 00:01:47) train_loss 68913.054688
+2022-07-21 07:44:52,585 (Elapsed: 00:01:47) epoch 46
+2022-07-21 07:44:53,969 (Elapsed: 00:01:49) train_loss 68607.484375
+2022-07-21 07:44:53,970 (Elapsed: 00:01:49) epoch 47
+2022-07-21 07:44:55,385 (Elapsed: 00:01:50) train_loss 68561.671875
+2022-07-21 07:44:55,386 (Elapsed: 00:01:50) epoch 48
+2022-07-21 07:44:56,777 (Elapsed: 00:01:51) train_loss 68647.359375
+2022-07-21 07:44:56,778 (Elapsed: 00:01:51) epoch 49
+2022-07-21 07:44:57,942 (Elapsed: 00:01:53) train 99 68390.265625
+2022-07-21 07:44:58,195 (Elapsed: 00:01:53) train_loss 68390.265625
+2022-07-21 07:45:01,799 (Elapsed: 00:01:56) val, step: 2, NELBO: 74978.765625, neg Log p 74799.929688
+2022-07-21 07:45:01,800 (Elapsed: 00:01:56) valid bpd nelbo 0.550189
+2022-07-21 07:45:01,800 (Elapsed: 00:01:56) valid bpd log p 0.548876
+2022-07-21 07:45:01,802 (Elapsed: 00:01:56) saving the model.
+2022-07-21 07:45:01,939 (Elapsed: 00:01:57) epoch 50
+2022-07-21 07:45:03,364 (Elapsed: 00:01:58) train_loss 68189.445312
+2022-07-21 07:45:03,365 (Elapsed: 00:01:58) epoch 51
+2022-07-21 07:45:04,746 (Elapsed: 00:01:59) train_loss 68078.140625
+2022-07-21 07:45:04,747 (Elapsed: 00:01:59) epoch 52
+2022-07-21 07:45:06,183 (Elapsed: 00:02:01) train_loss 67998.687500
+2022-07-21 07:45:06,184 (Elapsed: 00:02:01) epoch 53
+2022-07-21 07:45:07,602 (Elapsed: 00:02:02) train_loss 68167.476562
+2022-07-21 07:45:07,603 (Elapsed: 00:02:02) epoch 54
+2022-07-21 07:45:09,034 (Elapsed: 00:02:04) train_loss 67582.757812
+2022-07-21 07:45:12,618 (Elapsed: 00:02:07) val, step: 2, NELBO: 74037.914062, neg Log p 73880.335938
+2022-07-21 07:45:12,619 (Elapsed: 00:02:07) valid bpd nelbo 0.543285
+2022-07-21 07:45:12,619 (Elapsed: 00:02:07) valid bpd log p 0.542129
+2022-07-21 07:45:12,621 (Elapsed: 00:02:07) saving the model.
+2022-07-21 07:45:12,757 (Elapsed: 00:02:07) epoch 55
+2022-07-21 07:45:14,169 (Elapsed: 00:02:09) train_loss 68216.703125
+2022-07-21 07:45:14,170 (Elapsed: 00:02:09) epoch 56
+2022-07-21 07:45:15,574 (Elapsed: 00:02:10) train_loss 68097.578125
+2022-07-21 07:45:15,575 (Elapsed: 00:02:10) epoch 57
+2022-07-21 07:45:16,986 (Elapsed: 00:02:12) train_loss 67690.695312
+2022-07-21 07:45:16,987 (Elapsed: 00:02:12) epoch 58
+2022-07-21 07:45:18,376 (Elapsed: 00:02:13) train_loss 68034.562500
+2022-07-21 07:45:18,377 (Elapsed: 00:02:13) epoch 59
+2022-07-21 07:45:19,800 (Elapsed: 00:02:14) train_loss 67498.406250
+2022-07-21 07:45:23,362 (Elapsed: 00:02:18) val, step: 2, NELBO: 72954.226562, neg Log p 72793.929688
+2022-07-21 07:45:23,362 (Elapsed: 00:02:18) valid bpd nelbo 0.535333
+2022-07-21 07:45:23,363 (Elapsed: 00:02:18) valid bpd log p 0.534157
+2022-07-21 07:45:23,365 (Elapsed: 00:02:18) saving the model.
+2022-07-21 07:45:23,531 (Elapsed: 00:02:18) epoch 60
+2022-07-21 07:45:24,953 (Elapsed: 00:02:20) train_loss 67780.460938
+2022-07-21 07:45:24,953 (Elapsed: 00:02:20) epoch 61
+2022-07-21 07:45:26,364 (Elapsed: 00:02:21) train_loss 67772.812500
+2022-07-21 07:45:26,365 (Elapsed: 00:02:21) epoch 62
+2022-07-21 07:45:27,747 (Elapsed: 00:02:22) train_loss 67398.460938
+2022-07-21 07:45:27,747 (Elapsed: 00:02:22) epoch 63
+2022-07-21 07:45:29,196 (Elapsed: 00:02:24) train_loss 67631.507812
+2022-07-21 07:45:29,198 (Elapsed: 00:02:24) epoch 64
+2022-07-21 07:45:30,616 (Elapsed: 00:02:25) train_loss 67439.796875
+2022-07-21 07:45:34,169 (Elapsed: 00:02:29) val, step: 2, NELBO: 72463.125000, neg Log p 72337.015625
+2022-07-21 07:45:34,170 (Elapsed: 00:02:29) valid bpd nelbo 0.531729
+2022-07-21 07:45:34,170 (Elapsed: 00:02:29) valid bpd log p 0.530804
+2022-07-21 07:45:34,172 (Elapsed: 00:02:29) saving the model.
+2022-07-21 07:45:34,301 (Elapsed: 00:02:29) epoch 65
+2022-07-21 07:45:35,726 (Elapsed: 00:02:30) train_loss 67499.484375
+2022-07-21 07:45:35,727 (Elapsed: 00:02:30) epoch 66
+2022-07-21 07:45:37,161 (Elapsed: 00:02:32) train_loss 67569.031250
+2022-07-21 07:45:37,162 (Elapsed: 00:02:32) epoch 67
+2022-07-21 07:45:38,576 (Elapsed: 00:02:33) train_loss 67885.562500
+2022-07-21 07:45:38,577 (Elapsed: 00:02:33) epoch 68
+2022-07-21 07:45:39,973 (Elapsed: 00:02:35) train_loss 67322.234375
+2022-07-21 07:45:39,974 (Elapsed: 00:02:35) epoch 69
+2022-07-21 07:45:41,386 (Elapsed: 00:02:36) train_loss 67601.062500
+2022-07-21 07:45:44,920 (Elapsed: 00:02:40) val, step: 2, NELBO: 71185.585938, neg Log p 71026.015625
+2022-07-21 07:45:44,921 (Elapsed: 00:02:40) valid bpd nelbo 0.522355
+2022-07-21 07:45:44,921 (Elapsed: 00:02:40) valid bpd log p 0.521184
+2022-07-21 07:45:44,923 (Elapsed: 00:02:40) saving the model.
+2022-07-21 07:45:45,054 (Elapsed: 00:02:40) epoch 70
+2022-07-21 07:45:46,478 (Elapsed: 00:02:41) train_loss 67247.156250
+2022-07-21 07:45:46,479 (Elapsed: 00:02:41) epoch 71
+2022-07-21 07:45:47,912 (Elapsed: 00:02:43) train_loss 67162.640625
+2022-07-21 07:45:47,913 (Elapsed: 00:02:43) epoch 72
+2022-07-21 07:45:49,338 (Elapsed: 00:02:44) train_loss 67240.187500
+2022-07-21 07:45:49,339 (Elapsed: 00:02:44) epoch 73
+2022-07-21 07:45:50,755 (Elapsed: 00:02:45) train_loss 67500.742188
+2022-07-21 07:45:50,756 (Elapsed: 00:02:45) epoch 74
+2022-07-21 07:45:52,147 (Elapsed: 00:02:47) train_loss 67202.515625
+2022-07-21 07:45:55,695 (Elapsed: 00:02:50) val, step: 2, NELBO: 71502.359375, neg Log p 71371.492188
+2022-07-21 07:45:55,696 (Elapsed: 00:02:50) valid bpd nelbo 0.524679
+2022-07-21 07:45:55,696 (Elapsed: 00:02:50) valid bpd log p 0.523719
+2022-07-21 07:45:55,698 (Elapsed: 00:02:50) epoch 75
+2022-07-21 07:45:57,104 (Elapsed: 00:02:52) train_loss 67275.539062
+2022-07-21 07:45:57,105 (Elapsed: 00:02:52) epoch 76
+2022-07-21 07:45:58,492 (Elapsed: 00:02:53) train_loss 67515.828125
+2022-07-21 07:45:58,493 (Elapsed: 00:02:53) epoch 77
+2022-07-21 07:45:59,920 (Elapsed: 00:02:55) train_loss 67290.671875
+2022-07-21 07:45:59,921 (Elapsed: 00:02:55) epoch 78
+2022-07-21 07:46:01,357 (Elapsed: 00:02:56) train_loss 67119.812500
+2022-07-21 07:46:01,357 (Elapsed: 00:02:56) epoch 79
+2022-07-21 07:46:02,756 (Elapsed: 00:02:57) train_loss 67105.343750
+2022-07-21 07:46:06,321 (Elapsed: 00:03:01) val, step: 2, NELBO: 70931.539062, neg Log p 70807.875000
+2022-07-21 07:46:06,321 (Elapsed: 00:03:01) valid bpd nelbo 0.520490
+2022-07-21 07:46:06,322 (Elapsed: 00:03:01) valid bpd log p 0.519583
+2022-07-21 07:46:06,324 (Elapsed: 00:03:01) saving the model.
+2022-07-21 07:46:06,456 (Elapsed: 00:03:01) epoch 80
+2022-07-21 07:46:07,853 (Elapsed: 00:03:03) train_loss 67113.671875
+2022-07-21 07:46:07,854 (Elapsed: 00:03:03) epoch 81
+2022-07-21 07:46:09,254 (Elapsed: 00:03:04) train_loss 67165.398438
+2022-07-21 07:46:09,255 (Elapsed: 00:03:04) epoch 82
+2022-07-21 07:46:10,669 (Elapsed: 00:03:05) train_loss 67017.000000
+2022-07-21 07:46:10,670 (Elapsed: 00:03:05) epoch 83
+2022-07-21 07:46:12,097 (Elapsed: 00:03:07) train_loss 67170.156250
+2022-07-21 07:46:12,098 (Elapsed: 00:03:07) epoch 84
+2022-07-21 07:46:13,529 (Elapsed: 00:03:08) train_loss 67121.765625
+2022-07-21 07:46:17,100 (Elapsed: 00:03:12) val, step: 2, NELBO: 70274.742188, neg Log p 70112.523438
+2022-07-21 07:46:17,101 (Elapsed: 00:03:12) valid bpd nelbo 0.515671
+2022-07-21 07:46:17,101 (Elapsed: 00:03:12) valid bpd log p 0.514481
+2022-07-21 07:46:17,102 (Elapsed: 00:03:12) saving the model.
+2022-07-21 07:46:17,241 (Elapsed: 00:03:12) epoch 85
+2022-07-21 07:46:18,680 (Elapsed: 00:03:13) train_loss 66948.828125
+2022-07-21 07:46:18,681 (Elapsed: 00:03:13) epoch 86
+2022-07-21 07:46:20,076 (Elapsed: 00:03:15) train_loss 66723.648438
+2022-07-21 07:46:20,077 (Elapsed: 00:03:15) epoch 87
+2022-07-21 07:46:21,510 (Elapsed: 00:03:16) train_loss 66913.875000
+2022-07-21 07:46:21,511 (Elapsed: 00:03:16) epoch 88
+2022-07-21 07:46:22,925 (Elapsed: 00:03:18) train_loss 67110.453125
+2022-07-21 07:46:22,926 (Elapsed: 00:03:18) epoch 89
+2022-07-21 07:46:24,343 (Elapsed: 00:03:19) train_loss 66854.453125
+2022-07-21 07:46:27,914 (Elapsed: 00:03:23) val, step: 2, NELBO: 69553.976562, neg Log p 69411.398438
+2022-07-21 07:46:27,915 (Elapsed: 00:03:23) valid bpd nelbo 0.510382
+2022-07-21 07:46:27,915 (Elapsed: 00:03:23) valid bpd log p 0.509336
+2022-07-21 07:46:27,917 (Elapsed: 00:03:23) saving the model.
+2022-07-21 07:46:28,051 (Elapsed: 00:03:23) epoch 90
+2022-07-21 07:46:29,503 (Elapsed: 00:03:24) train_loss 66778.218750
+2022-07-21 07:46:29,504 (Elapsed: 00:03:24) epoch 91
+2022-07-21 07:46:30,946 (Elapsed: 00:03:26) train_loss 66932.437500
+2022-07-21 07:46:30,947 (Elapsed: 00:03:26) epoch 92
+2022-07-21 07:46:32,370 (Elapsed: 00:03:27) train_loss 66844.578125
+2022-07-21 07:46:32,371 (Elapsed: 00:03:27) epoch 93
+2022-07-21 07:46:33,811 (Elapsed: 00:03:28) train_loss 66758.460938
+2022-07-21 07:46:33,811 (Elapsed: 00:03:28) epoch 94
+2022-07-21 07:46:35,238 (Elapsed: 00:03:30) train_loss 67225.437500
+2022-07-21 07:46:38,816 (Elapsed: 00:03:33) val, step: 2, NELBO: 69293.781250, neg Log p 69167.929688
+2022-07-21 07:46:38,817 (Elapsed: 00:03:33) valid bpd nelbo 0.508473
+2022-07-21 07:46:38,817 (Elapsed: 00:03:33) valid bpd log p 0.507549
+2022-07-21 07:46:38,819 (Elapsed: 00:03:33) saving the model.
+2022-07-21 07:46:38,952 (Elapsed: 00:03:34) epoch 95
+2022-07-21 07:46:40,349 (Elapsed: 00:03:35) train_loss 66846.984375
+2022-07-21 07:46:40,350 (Elapsed: 00:03:35) epoch 96
+2022-07-21 07:46:41,817 (Elapsed: 00:03:36) train_loss 66789.500000
+2022-07-21 07:46:41,817 (Elapsed: 00:03:36) epoch 97
+2022-07-21 07:46:43,247 (Elapsed: 00:03:38) train_loss 66444.273438
+2022-07-21 07:46:43,248 (Elapsed: 00:03:38) epoch 98
+2022-07-21 07:46:44,654 (Elapsed: 00:03:39) train_loss 66645.265625
+2022-07-21 07:46:44,655 (Elapsed: 00:03:39) epoch 99
+2022-07-21 07:46:45,836 (Elapsed: 00:03:41) train 199 66462.359375
+2022-07-21 07:46:46,096 (Elapsed: 00:03:41) train_loss 66462.359375
+2022-07-21 07:46:49,669 (Elapsed: 00:03:44) val, step: 2, NELBO: 68703.992188, neg Log p 68600.656250
+2022-07-21 07:46:49,669 (Elapsed: 00:03:44) valid bpd nelbo 0.504145
+2022-07-21 07:46:49,669 (Elapsed: 00:03:44) valid bpd log p 0.503387
+2022-07-21 07:46:49,672 (Elapsed: 00:03:44) saving the model.
+2022-07-21 07:46:49,804 (Elapsed: 00:03:44) epoch 100
+2022-07-21 07:46:51,214 (Elapsed: 00:03:46) train_loss 66640.546875
+2022-07-21 07:46:51,215 (Elapsed: 00:03:46) saving the model at milestone epochs.
+2022-07-21 07:46:51,318 (Elapsed: 00:03:46) epoch 101
+2022-07-21 07:46:52,727 (Elapsed: 00:03:47) train_loss 66751.898438
+2022-07-21 07:46:52,728 (Elapsed: 00:03:47) epoch 102
+2022-07-21 07:46:54,126 (Elapsed: 00:03:49) train_loss 66555.171875
+2022-07-21 07:46:54,127 (Elapsed: 00:03:49) epoch 103
+2022-07-21 07:46:55,525 (Elapsed: 00:03:50) train_loss 66562.968750
+2022-07-21 07:46:55,526 (Elapsed: 00:03:50) epoch 104
+2022-07-21 07:46:56,931 (Elapsed: 00:03:52) train_loss 66573.664062
+2022-07-21 07:47:00,510 (Elapsed: 00:03:55) val, step: 2, NELBO: 68227.039062, neg Log p 68109.500000
+2022-07-21 07:47:00,511 (Elapsed: 00:03:55) valid bpd nelbo 0.500645
+2022-07-21 07:47:00,511 (Elapsed: 00:03:55) valid bpd log p 0.499783
+2022-07-21 07:47:00,513 (Elapsed: 00:03:55) saving the model.
+2022-07-21 07:47:00,651 (Elapsed: 00:03:55) epoch 105
+2022-07-21 07:47:02,066 (Elapsed: 00:03:57) train_loss 66611.648438
+2022-07-21 07:47:02,066 (Elapsed: 00:03:57) epoch 106
+2022-07-21 07:47:03,483 (Elapsed: 00:03:58) train_loss 66516.781250
+2022-07-21 07:47:03,484 (Elapsed: 00:03:58) epoch 107
+2022-07-21 07:47:04,881 (Elapsed: 00:04:00) train_loss 66434.843750
+2022-07-21 07:47:04,881 (Elapsed: 00:04:00) epoch 108
+2022-07-21 07:47:06,302 (Elapsed: 00:04:01) train_loss 66323.429688
+2022-07-21 07:47:06,303 (Elapsed: 00:04:01) epoch 109
+2022-07-21 07:47:07,719 (Elapsed: 00:04:02) train_loss 66617.625000
+2022-07-21 07:47:11,268 (Elapsed: 00:04:06) val, step: 2, NELBO: 68353.367188, neg Log p 68248.992188
+2022-07-21 07:47:11,269 (Elapsed: 00:04:06) valid bpd nelbo 0.501572
+2022-07-21 07:47:11,269 (Elapsed: 00:04:06) valid bpd log p 0.500806
+2022-07-21 07:47:11,271 (Elapsed: 00:04:06) epoch 110
+2022-07-21 07:47:12,685 (Elapsed: 00:04:07) train_loss 66342.515625
+2022-07-21 07:47:12,686 (Elapsed: 00:04:07) epoch 111
+2022-07-21 07:47:14,125 (Elapsed: 00:04:09) train_loss 66531.039062
+2022-07-21 07:47:14,126 (Elapsed: 00:04:09) epoch 112
+2022-07-21 07:47:15,538 (Elapsed: 00:04:10) train_loss 66266.562500
+2022-07-21 07:47:15,539 (Elapsed: 00:04:10) epoch 113
+2022-07-21 07:47:16,952 (Elapsed: 00:04:12) train_loss 66356.570312
+2022-07-21 07:47:16,953 (Elapsed: 00:04:12) epoch 114
+2022-07-21 07:47:18,337 (Elapsed: 00:04:13) train_loss 66257.382812
+2022-07-21 07:47:21,897 (Elapsed: 00:04:17) val, step: 2, NELBO: 67640.226562, neg Log p 67510.835938
+2022-07-21 07:47:21,898 (Elapsed: 00:04:17) valid bpd nelbo 0.496339
+2022-07-21 07:47:21,898 (Elapsed: 00:04:17) valid bpd log p 0.495390
+2022-07-21 07:47:21,901 (Elapsed: 00:04:17) saving the model.
+2022-07-21 07:47:22,043 (Elapsed: 00:04:17) epoch 115
+2022-07-21 07:47:23,454 (Elapsed: 00:04:18) train_loss 66099.914062
+2022-07-21 07:47:23,455 (Elapsed: 00:04:18) epoch 116
+2022-07-21 07:47:24,886 (Elapsed: 00:04:20) train_loss 66123.046875
+2022-07-21 07:47:24,887 (Elapsed: 00:04:20) epoch 117
+2022-07-21 07:47:26,303 (Elapsed: 00:04:21) train_loss 66420.765625
+2022-07-21 07:47:26,304 (Elapsed: 00:04:21) epoch 118
+2022-07-21 07:47:27,697 (Elapsed: 00:04:22) train_loss 66243.156250
+2022-07-21 07:47:27,698 (Elapsed: 00:04:22) epoch 119
+2022-07-21 07:47:29,114 (Elapsed: 00:04:24) train_loss 66120.484375
+2022-07-21 07:47:32,670 (Elapsed: 00:04:27) val, step: 2, NELBO: 67359.914062, neg Log p 67209.140625
+2022-07-21 07:47:32,670 (Elapsed: 00:04:27) valid bpd nelbo 0.494282
+2022-07-21 07:47:32,670 (Elapsed: 00:04:27) valid bpd log p 0.493176
+2022-07-21 07:47:32,673 (Elapsed: 00:04:27) saving the model.
+2022-07-21 07:47:32,811 (Elapsed: 00:04:27) epoch 120
+2022-07-21 07:47:34,244 (Elapsed: 00:04:29) train_loss 66353.718750
+2022-07-21 07:47:34,245 (Elapsed: 00:04:29) epoch 121
+2022-07-21 07:47:35,681 (Elapsed: 00:04:30) train_loss 66300.437500
+2022-07-21 07:47:35,682 (Elapsed: 00:04:30) epoch 122
+2022-07-21 07:47:37,107 (Elapsed: 00:04:32) train_loss 66570.335938
+2022-07-21 07:47:37,108 (Elapsed: 00:04:32) epoch 123
+2022-07-21 07:47:38,541 (Elapsed: 00:04:33) train_loss 66838.187500
+2022-07-21 07:47:38,542 (Elapsed: 00:04:33) epoch 124
+2022-07-21 07:47:39,938 (Elapsed: 00:04:35) train_loss 66205.062500
+2022-07-21 07:47:43,498 (Elapsed: 00:04:38) val, step: 2, NELBO: 67400.500000, neg Log p 67255.820312
+2022-07-21 07:47:43,498 (Elapsed: 00:04:38) valid bpd nelbo 0.494580
+2022-07-21 07:47:43,499 (Elapsed: 00:04:38) valid bpd log p 0.493518
+2022-07-21 07:47:43,501 (Elapsed: 00:04:38) epoch 125
+2022-07-21 07:47:44,900 (Elapsed: 00:04:40) train_loss 66416.203125
+2022-07-21 07:47:44,901 (Elapsed: 00:04:40) epoch 126
+2022-07-21 07:47:46,319 (Elapsed: 00:04:41) train_loss 66247.750000
+2022-07-21 07:47:46,320 (Elapsed: 00:04:41) epoch 127
+2022-07-21 07:47:47,748 (Elapsed: 00:04:42) train_loss 65915.109375
+2022-07-21 07:47:47,749 (Elapsed: 00:04:42) epoch 128
+2022-07-21 07:50:26,271 (Elapsed: 00:00:00) args = Namespace(arch_instance='res_mbconv', autocast_eval=True, autocast_train=True, batch_size=2, channel_mult=[1, 2, 2], cont_training=False, crop=256, data='../data/raw/256/', dataset='retina', decoder_dist='bin', distributed=True, epochs=200, global_rank=0, kl_anneal_portion=1.0, kl_const_coeff=0.0001, kl_const_portion=0.0001, kl_max_coeff=0.7, learning_rate_min_vae=0.0001, learning_rate_vae=0.01, local_rank=0, log_sig_q_scale=5.0, master_address='127.0.0.1', node_rank=0, num_cell_per_cond_dec=1, num_cell_per_cond_enc=1, num_channels_dec=64, num_channels_enc=64, num_groups_per_scale=2, num_latent_per_group=20, num_latent_scales=1, num_nf=0, num_postprocess_blocks=2, num_postprocess_cells=3, num_preprocess_blocks=2, num_preprocess_cells=3, num_proc_node=1, num_process_per_node=1, num_total_iter=400, num_x_bits=8, progressive_input_vae='none', resize=256, root='../MNIST/', save='../MNIST//../save_dir/vae', seed=1, use_se=True, warmup_epochs=5, weight_decay=0.0003, weight_decay_norm=0.01, weight_decay_norm_anneal=False, weight_decay_norm_init=10.0)
+2022-07-21 07:50:30,051 (Elapsed: 00:00:03) VAE: param size = 3.523070M 
+2022-07-21 07:50:30,131 (Elapsed: 00:00:03) epoch 0
+2022-07-21 07:50:36,198 (Elapsed: 00:00:09) train_loss 137208.375000
+2022-07-21 07:50:36,199 (Elapsed: 00:00:09) epoch 1
+2022-07-21 07:50:37,577 (Elapsed: 00:00:11) train_loss 137252.000000
+2022-07-21 07:50:37,579 (Elapsed: 00:00:11) epoch 2
+2022-07-21 07:50:38,937 (Elapsed: 00:00:12) train_loss 137211.593750
+2022-07-21 07:50:38,938 (Elapsed: 00:00:12) epoch 3
+2022-07-21 07:50:40,294 (Elapsed: 00:00:14) train_loss 137221.156250
+2022-07-21 07:50:40,295 (Elapsed: 00:00:14) epoch 4
+2022-07-21 07:50:41,666 (Elapsed: 00:00:15) train_loss 137266.156250
+2022-07-21 07:50:48,891 (Elapsed: 00:00:22) val, step: 2, NELBO: 139836.718750, neg Log p 139688.609375
+2022-07-21 07:50:48,891 (Elapsed: 00:00:22) valid bpd nelbo 1.026112
+2022-07-21 07:50:48,892 (Elapsed: 00:00:22) valid bpd log p 1.025025
+2022-07-21 07:50:48,894 (Elapsed: 00:00:22) saving the model.
+2022-07-21 07:50:48,960 (Elapsed: 00:00:22) epoch 5
+2022-07-21 07:50:50,355 (Elapsed: 00:00:24) train_loss 145134.109375
+2022-07-21 07:50:50,356 (Elapsed: 00:00:24) epoch 6
+2022-07-21 07:50:51,734 (Elapsed: 00:00:25) train_loss 402536.000000
+2022-07-21 07:50:51,735 (Elapsed: 00:00:25) epoch 7
+2022-07-21 07:50:53,144 (Elapsed: 00:00:26) train_loss 117290.914062
+2022-07-21 07:50:53,145 (Elapsed: 00:00:26) epoch 8
+2022-07-21 07:50:54,522 (Elapsed: 00:00:28) train_loss 109780.437500
+2022-07-21 07:50:54,523 (Elapsed: 00:00:28) epoch 9
+2022-07-21 07:50:55,903 (Elapsed: 00:00:29) train_loss 111460.109375
+2022-07-21 07:50:59,361 (Elapsed: 00:00:33) val, step: 2, NELBO: 207912.640625, neg Log p 207026.171875
+2022-07-21 07:50:59,361 (Elapsed: 00:00:33) valid bpd nelbo 1.525648
+2022-07-21 07:50:59,361 (Elapsed: 00:00:33) valid bpd log p 1.519143
+2022-07-21 07:50:59,364 (Elapsed: 00:00:33) epoch 10
+2022-07-21 07:51:00,746 (Elapsed: 00:00:34) train_loss 100034.945312
+2022-07-21 07:51:00,747 (Elapsed: 00:00:34) epoch 11
+2022-07-21 07:51:02,141 (Elapsed: 00:00:35) train_loss 87368.484375
+2022-07-21 07:51:02,142 (Elapsed: 00:00:35) epoch 12
+2022-07-21 07:51:03,520 (Elapsed: 00:00:37) train_loss 86855.484375
+2022-07-21 07:51:03,521 (Elapsed: 00:00:37) epoch 13
+2022-07-21 07:51:04,898 (Elapsed: 00:00:38) train_loss 81736.703125
+2022-07-21 07:51:04,899 (Elapsed: 00:00:38) epoch 14
+2022-07-21 07:51:06,303 (Elapsed: 00:00:40) train_loss 79943.062500
+2022-07-21 07:51:09,810 (Elapsed: 00:00:43) val, step: 2, NELBO: 137960.765625, neg Log p 137458.953125
+2022-07-21 07:51:09,810 (Elapsed: 00:00:43) valid bpd nelbo 1.012346
+2022-07-21 07:51:09,810 (Elapsed: 00:00:43) valid bpd log p 1.008664
+2022-07-21 07:51:09,813 (Elapsed: 00:00:43) saving the model.
+2022-07-21 07:51:09,943 (Elapsed: 00:00:43) epoch 15
+2022-07-21 07:51:11,354 (Elapsed: 00:00:45) train_loss 78697.312500
+2022-07-21 07:51:11,355 (Elapsed: 00:00:45) epoch 16
+2022-07-21 07:51:12,761 (Elapsed: 00:00:46) train_loss 77657.875000
+2022-07-21 07:51:12,761 (Elapsed: 00:00:46) epoch 17
+2022-07-21 07:51:14,174 (Elapsed: 00:00:47) train_loss 76819.609375
+2022-07-21 07:51:14,175 (Elapsed: 00:00:47) epoch 18
+2022-07-21 07:51:15,591 (Elapsed: 00:00:49) train_loss 75884.437500
+2022-07-21 07:51:15,591 (Elapsed: 00:00:49) epoch 19
+2022-07-21 07:51:17,014 (Elapsed: 00:00:50) train_loss 74772.515625
+2022-07-21 07:51:20,580 (Elapsed: 00:00:54) val, step: 2, NELBO: 96117.898438, neg Log p 95765.757812
+2022-07-21 07:51:20,581 (Elapsed: 00:00:54) valid bpd nelbo 0.705306
+2022-07-21 07:51:20,581 (Elapsed: 00:00:54) valid bpd log p 0.702722
+2022-07-21 07:51:20,583 (Elapsed: 00:00:54) saving the model.
+2022-07-21 07:51:20,725 (Elapsed: 00:00:54) epoch 20
+2022-07-21 07:51:22,196 (Elapsed: 00:00:55) train_loss 73858.906250
+2022-07-21 07:51:22,197 (Elapsed: 00:00:55) epoch 21
+2022-07-21 07:51:23,624 (Elapsed: 00:00:57) train_loss 73245.484375
+2022-07-21 07:51:23,625 (Elapsed: 00:00:57) epoch 22
+2022-07-21 07:51:25,016 (Elapsed: 00:00:58) train_loss 72703.718750
+2022-07-21 07:51:25,017 (Elapsed: 00:00:58) epoch 23
+2022-07-21 07:51:26,435 (Elapsed: 00:01:00) train_loss 72356.898438
+2022-07-21 07:51:26,436 (Elapsed: 00:01:00) epoch 24
+2022-07-21 07:51:27,859 (Elapsed: 00:01:01) train_loss 71933.734375
+2022-07-21 07:51:31,453 (Elapsed: 00:01:05) val, step: 2, NELBO: 88309.085938, neg Log p 88044.882812
+2022-07-21 07:51:31,454 (Elapsed: 00:01:05) valid bpd nelbo 0.648006
+2022-07-21 07:51:31,454 (Elapsed: 00:01:05) valid bpd log p 0.646067
+2022-07-21 07:51:31,456 (Elapsed: 00:01:05) saving the model.
+2022-07-21 07:51:31,598 (Elapsed: 00:01:05) epoch 25
+2022-07-21 07:51:33,038 (Elapsed: 00:01:06) train_loss 71641.476562
+2022-07-21 07:51:33,038 (Elapsed: 00:01:06) epoch 26
+2022-07-21 07:51:34,472 (Elapsed: 00:01:08) train_loss 71431.859375
+2022-07-21 07:51:34,473 (Elapsed: 00:01:08) epoch 27
+2022-07-21 07:51:35,882 (Elapsed: 00:01:09) train_loss 70919.828125
+2022-07-21 07:51:35,883 (Elapsed: 00:01:09) epoch 28
+2022-07-21 07:51:37,312 (Elapsed: 00:01:11) train_loss 70989.531250
+2022-07-21 07:51:37,313 (Elapsed: 00:01:11) epoch 29
+2022-07-21 07:51:38,714 (Elapsed: 00:01:12) train_loss 70402.718750
+2022-07-21 07:51:42,339 (Elapsed: 00:01:16) val, step: 2, NELBO: 83780.484375, neg Log p 83622.421875
+2022-07-21 07:51:42,339 (Elapsed: 00:01:16) valid bpd nelbo 0.614775
+2022-07-21 07:51:42,339 (Elapsed: 00:01:16) valid bpd log p 0.613615
+2022-07-21 07:51:42,342 (Elapsed: 00:01:16) saving the model.
+2022-07-21 07:51:42,472 (Elapsed: 00:01:16) epoch 30
+2022-07-21 07:51:43,873 (Elapsed: 00:01:17) train_loss 70864.562500
+2022-07-21 07:51:43,874 (Elapsed: 00:01:17) epoch 31
+2022-07-21 07:51:45,274 (Elapsed: 00:01:19) train_loss 70164.164062
+2022-07-21 07:51:45,275 (Elapsed: 00:01:19) epoch 32
+2022-07-21 07:51:46,671 (Elapsed: 00:01:20) train_loss 70385.906250
+2022-07-21 07:51:46,672 (Elapsed: 00:01:20) epoch 33
+2022-07-21 07:51:48,099 (Elapsed: 00:01:21) train_loss 70019.117188
+2022-07-21 07:51:48,100 (Elapsed: 00:01:21) epoch 34
+2022-07-21 07:51:49,523 (Elapsed: 00:01:23) train_loss 70036.171875
+2022-07-21 07:51:53,117 (Elapsed: 00:01:26) val, step: 2, NELBO: 80155.265625, neg Log p 79932.703125
+2022-07-21 07:51:53,117 (Elapsed: 00:01:26) valid bpd nelbo 0.588173
+2022-07-21 07:51:53,118 (Elapsed: 00:01:26) valid bpd log p 0.586540
+2022-07-21 07:51:53,120 (Elapsed: 00:01:26) saving the model.
+2022-07-21 07:51:53,253 (Elapsed: 00:01:26) epoch 35
+2022-07-21 07:51:54,710 (Elapsed: 00:01:28) train_loss 69768.078125
+2022-07-21 07:51:54,711 (Elapsed: 00:01:28) epoch 36
+2022-07-21 07:51:56,122 (Elapsed: 00:01:29) train_loss 69595.328125
+2022-07-21 07:51:56,123 (Elapsed: 00:01:29) epoch 37
+2022-07-21 07:51:57,519 (Elapsed: 00:01:31) train_loss 69341.625000
+2022-07-21 07:51:57,520 (Elapsed: 00:01:31) epoch 38
+2022-07-21 07:51:58,942 (Elapsed: 00:01:32) train_loss 69298.937500
+2022-07-21 07:51:58,943 (Elapsed: 00:01:32) epoch 39
+2022-07-21 07:52:00,341 (Elapsed: 00:01:34) train_loss 69029.710938
+2022-07-21 07:52:03,900 (Elapsed: 00:01:37) val, step: 2, NELBO: 78127.929688, neg Log p 77980.156250
+2022-07-21 07:52:03,900 (Elapsed: 00:01:37) valid bpd nelbo 0.573297
+2022-07-21 07:52:03,901 (Elapsed: 00:01:37) valid bpd log p 0.572213
+2022-07-21 07:52:03,903 (Elapsed: 00:01:37) saving the model.
+2022-07-21 07:52:04,035 (Elapsed: 00:01:37) epoch 40
+2022-07-21 07:52:05,447 (Elapsed: 00:01:39) train_loss 69050.578125
+2022-07-21 07:52:05,448 (Elapsed: 00:01:39) epoch 41
+2022-07-21 07:52:06,853 (Elapsed: 00:01:40) train_loss 68739.718750
+2022-07-21 07:52:06,854 (Elapsed: 00:01:40) epoch 42
+2022-07-21 07:52:08,258 (Elapsed: 00:01:41) train_loss 68894.343750
+2022-07-21 07:52:08,259 (Elapsed: 00:01:41) epoch 43
+2022-07-21 07:52:09,645 (Elapsed: 00:01:43) train_loss 68535.796875
+2022-07-21 07:52:09,646 (Elapsed: 00:01:43) epoch 44
+2022-07-21 07:52:11,048 (Elapsed: 00:01:44) train_loss 68384.578125
+2022-07-21 07:52:14,587 (Elapsed: 00:01:48) val, step: 2, NELBO: 76277.375000, neg Log p 76129.882812
+2022-07-21 07:52:14,587 (Elapsed: 00:01:48) valid bpd nelbo 0.559718
+2022-07-21 07:52:14,587 (Elapsed: 00:01:48) valid bpd log p 0.558635
+2022-07-21 07:52:14,590 (Elapsed: 00:01:48) saving the model.
+2022-07-21 07:52:14,721 (Elapsed: 00:01:48) epoch 45
+2022-07-21 07:52:16,130 (Elapsed: 00:01:49) train_loss 68626.671875
+2022-07-21 07:52:16,131 (Elapsed: 00:01:49) epoch 46
+2022-07-21 07:52:17,521 (Elapsed: 00:01:51) train_loss 68341.140625
+2022-07-21 07:52:17,522 (Elapsed: 00:01:51) epoch 47
+2022-07-21 07:52:18,926 (Elapsed: 00:01:52) train_loss 68324.742188
+2022-07-21 07:52:18,927 (Elapsed: 00:01:52) epoch 48
+2022-07-21 07:52:20,330 (Elapsed: 00:01:54) train_loss 68430.328125
+2022-07-21 07:52:20,331 (Elapsed: 00:01:54) epoch 49
+2022-07-21 07:52:21,483 (Elapsed: 00:01:55) train 99 68105.125000
+2022-07-21 07:52:21,747 (Elapsed: 00:01:55) train_loss 68105.125000
+2022-07-21 07:52:25,284 (Elapsed: 00:01:59) val, step: 2, NELBO: 74747.242188, neg Log p 74550.125000
+2022-07-21 07:52:25,284 (Elapsed: 00:01:59) valid bpd nelbo 0.548490
+2022-07-21 07:52:25,285 (Elapsed: 00:01:59) valid bpd log p 0.547043
+2022-07-21 07:52:25,287 (Elapsed: 00:01:59) saving the model.
+2022-07-21 07:52:25,420 (Elapsed: 00:01:59) epoch 50
+2022-07-21 07:52:26,831 (Elapsed: 00:02:00) train_loss 67961.375000
+2022-07-21 07:52:26,832 (Elapsed: 00:02:00) epoch 51
+2022-07-21 07:52:28,221 (Elapsed: 00:02:01) train_loss 67828.500000
+2022-07-21 07:52:28,222 (Elapsed: 00:02:01) epoch 52
+2022-07-21 07:52:29,635 (Elapsed: 00:02:03) train_loss 67749.421875
+2022-07-21 07:52:29,636 (Elapsed: 00:02:03) epoch 53
+2022-07-21 07:52:31,047 (Elapsed: 00:02:04) train_loss 67946.546875
+2022-07-21 07:52:31,048 (Elapsed: 00:02:04) epoch 54
+2022-07-21 07:52:32,454 (Elapsed: 00:02:06) train_loss 67384.101562
+2022-07-21 07:52:35,999 (Elapsed: 00:02:09) val, step: 2, NELBO: 73889.289062, neg Log p 73704.070312
+2022-07-21 07:52:36,000 (Elapsed: 00:02:09) valid bpd nelbo 0.542194
+2022-07-21 07:52:36,000 (Elapsed: 00:02:09) valid bpd log p 0.540835
+2022-07-21 07:52:36,002 (Elapsed: 00:02:09) saving the model.
+2022-07-21 07:52:36,138 (Elapsed: 00:02:09) epoch 55
+2022-07-21 07:52:37,580 (Elapsed: 00:02:11) train_loss 67981.468750
+2022-07-21 07:52:37,581 (Elapsed: 00:02:11) epoch 56
+2022-07-21 07:52:38,990 (Elapsed: 00:02:12) train_loss 67774.570312
+2022-07-21 07:52:38,991 (Elapsed: 00:02:12) epoch 57
+2022-07-21 07:52:40,392 (Elapsed: 00:02:14) train_loss 67508.984375
+2022-07-21 07:52:40,393 (Elapsed: 00:02:14) epoch 58
+2022-07-21 07:52:41,828 (Elapsed: 00:02:15) train_loss 67876.625000
+2022-07-21 07:52:41,829 (Elapsed: 00:02:15) epoch 59
+2022-07-21 07:52:43,261 (Elapsed: 00:02:16) train_loss 67364.250000
+2022-07-21 07:52:46,828 (Elapsed: 00:02:20) val, step: 2, NELBO: 72563.914062, neg Log p 72426.515625
+2022-07-21 07:52:46,829 (Elapsed: 00:02:20) valid bpd nelbo 0.532469
+2022-07-21 07:52:46,829 (Elapsed: 00:02:20) valid bpd log p 0.531460
+2022-07-21 07:52:46,831 (Elapsed: 00:02:20) saving the model.
+2022-07-21 07:52:46,971 (Elapsed: 00:02:20) epoch 60
+2022-07-21 07:52:48,392 (Elapsed: 00:02:22) train_loss 67626.562500
+2022-07-21 07:52:48,393 (Elapsed: 00:02:22) epoch 61
+2022-07-21 07:52:49,871 (Elapsed: 00:02:23) train_loss 67630.046875
+2022-07-21 07:52:49,871 (Elapsed: 00:02:23) epoch 62
+2022-07-21 07:52:51,275 (Elapsed: 00:02:25) train_loss 67237.593750
+2022-07-21 07:52:51,276 (Elapsed: 00:02:25) epoch 63
+2022-07-21 07:52:52,694 (Elapsed: 00:02:26) train_loss 67424.812500
+2022-07-21 07:52:52,695 (Elapsed: 00:02:26) epoch 64
+2022-07-21 07:52:54,109 (Elapsed: 00:02:27) train_loss 67298.531250
+2022-07-21 07:52:57,687 (Elapsed: 00:02:31) val, step: 2, NELBO: 72136.109375, neg Log p 71999.031250
+2022-07-21 07:52:57,687 (Elapsed: 00:02:31) valid bpd nelbo 0.529329
+2022-07-21 07:52:57,687 (Elapsed: 00:02:31) valid bpd log p 0.528324
+2022-07-21 07:52:57,690 (Elapsed: 00:02:31) saving the model.
+2022-07-21 07:52:57,823 (Elapsed: 00:02:31) epoch 65
+2022-07-21 07:52:59,252 (Elapsed: 00:02:32) train_loss 67367.109375
+2022-07-21 07:52:59,253 (Elapsed: 00:02:32) epoch 66
+2022-07-21 07:53:00,660 (Elapsed: 00:02:34) train_loss 67394.328125
+2022-07-21 07:53:00,661 (Elapsed: 00:02:34) epoch 67
+2022-07-21 07:53:02,079 (Elapsed: 00:02:35) train_loss 67702.742188
+2022-07-21 07:53:02,081 (Elapsed: 00:02:35) epoch 68
+2022-07-21 07:53:03,497 (Elapsed: 00:02:37) train_loss 67134.281250
+2022-07-21 07:53:03,498 (Elapsed: 00:02:37) epoch 69
+2022-07-21 07:53:04,914 (Elapsed: 00:02:38) train_loss 67443.093750
+2022-07-21 07:53:08,496 (Elapsed: 00:02:42) val, step: 2, NELBO: 71111.937500, neg Log p 70938.968750
+2022-07-21 07:53:08,496 (Elapsed: 00:02:42) valid bpd nelbo 0.521814
+2022-07-21 07:53:08,497 (Elapsed: 00:02:42) valid bpd log p 0.520545
+2022-07-21 07:53:08,499 (Elapsed: 00:02:42) saving the model.
+2022-07-21 07:53:08,629 (Elapsed: 00:02:42) epoch 70
+2022-07-21 07:53:10,037 (Elapsed: 00:02:43) train_loss 67048.843750
+2022-07-21 07:53:10,038 (Elapsed: 00:02:43) epoch 71
+2022-07-21 07:53:11,457 (Elapsed: 00:02:45) train_loss 66925.156250
+2022-07-21 07:53:11,458 (Elapsed: 00:02:45) epoch 72
+2022-07-21 07:53:12,848 (Elapsed: 00:02:46) train_loss 67104.984375
+2022-07-21 07:53:12,848 (Elapsed: 00:02:46) epoch 73
+2022-07-21 07:53:14,275 (Elapsed: 00:02:48) train_loss 67375.484375
+2022-07-21 07:53:14,276 (Elapsed: 00:02:48) epoch 74
+2022-07-21 07:53:15,727 (Elapsed: 00:02:49) train_loss 67029.843750
+2022-07-21 07:53:19,297 (Elapsed: 00:02:53) val, step: 2, NELBO: 71362.117188, neg Log p 71213.765625
+2022-07-21 07:53:19,297 (Elapsed: 00:02:53) valid bpd nelbo 0.523650
+2022-07-21 07:53:19,298 (Elapsed: 00:02:53) valid bpd log p 0.522561
+2022-07-21 07:53:19,300 (Elapsed: 00:02:53) epoch 75
+2022-07-21 07:53:20,741 (Elapsed: 00:02:54) train_loss 67102.679688
+2022-07-21 07:53:20,742 (Elapsed: 00:02:54) epoch 76
+2022-07-21 07:53:22,182 (Elapsed: 00:02:55) train_loss 67371.445312
+2022-07-21 07:53:22,183 (Elapsed: 00:02:55) epoch 77
+2022-07-21 07:53:23,597 (Elapsed: 00:02:57) train_loss 67175.179688
+2022-07-21 07:53:23,598 (Elapsed: 00:02:57) epoch 78
+2022-07-21 07:53:25,030 (Elapsed: 00:02:58) train_loss 67004.031250
+2022-07-21 07:53:25,031 (Elapsed: 00:02:58) epoch 79
+2022-07-21 07:53:26,429 (Elapsed: 00:03:00) train_loss 66950.523438
+2022-07-21 07:53:29,994 (Elapsed: 00:03:03) val, step: 2, NELBO: 70744.039062, neg Log p 70625.429688
+2022-07-21 07:53:29,994 (Elapsed: 00:03:03) valid bpd nelbo 0.519115
+2022-07-21 07:53:29,994 (Elapsed: 00:03:03) valid bpd log p 0.518244
+2022-07-21 07:53:29,997 (Elapsed: 00:03:03) saving the model.
+2022-07-21 07:53:30,134 (Elapsed: 00:03:03) epoch 80
+2022-07-21 07:53:31,537 (Elapsed: 00:03:05) train_loss 66947.828125
+2022-07-21 07:53:31,538 (Elapsed: 00:03:05) epoch 81
+2022-07-21 07:53:32,968 (Elapsed: 00:03:06) train_loss 67062.421875
+2022-07-21 07:53:32,969 (Elapsed: 00:03:06) epoch 82
+2022-07-21 07:53:34,367 (Elapsed: 00:03:08) train_loss 66889.351562
+2022-07-21 07:53:34,368 (Elapsed: 00:03:08) epoch 83
+2022-07-21 07:53:35,751 (Elapsed: 00:03:09) train_loss 66967.140625
+2022-07-21 07:53:35,752 (Elapsed: 00:03:09) epoch 84
+2022-07-21 07:53:37,164 (Elapsed: 00:03:10) train_loss 66953.335938
+2022-07-21 07:53:40,722 (Elapsed: 00:03:14) val, step: 2, NELBO: 70107.031250, neg Log p 69933.718750
+2022-07-21 07:53:40,723 (Elapsed: 00:03:14) valid bpd nelbo 0.514440
+2022-07-21 07:53:40,723 (Elapsed: 00:03:14) valid bpd log p 0.513169
+2022-07-21 07:53:40,725 (Elapsed: 00:03:14) saving the model.
+2022-07-21 07:53:40,861 (Elapsed: 00:03:14) epoch 85
+2022-07-21 07:53:42,315 (Elapsed: 00:03:16) train_loss 66795.234375
+2022-07-21 07:53:42,316 (Elapsed: 00:03:16) epoch 86
+2022-07-21 07:53:43,743 (Elapsed: 00:03:17) train_loss 66539.156250
+2022-07-21 07:53:43,744 (Elapsed: 00:03:17) epoch 87
+2022-07-21 07:53:45,150 (Elapsed: 00:03:18) train_loss 66719.437500
+2022-07-21 07:53:45,151 (Elapsed: 00:03:18) epoch 88
+2022-07-21 07:53:46,567 (Elapsed: 00:03:20) train_loss 66925.007812
+2022-07-21 07:53:46,567 (Elapsed: 00:03:20) epoch 89
+2022-07-21 07:53:47,950 (Elapsed: 00:03:21) train_loss 66672.140625
+2022-07-21 07:53:51,508 (Elapsed: 00:03:25) val, step: 2, NELBO: 69204.914062, neg Log p 69046.007812
+2022-07-21 07:53:51,509 (Elapsed: 00:03:25) valid bpd nelbo 0.507821
+2022-07-21 07:53:51,509 (Elapsed: 00:03:25) valid bpd log p 0.506655
+2022-07-21 07:53:51,512 (Elapsed: 00:03:25) saving the model.
+2022-07-21 07:53:51,648 (Elapsed: 00:03:25) epoch 90
+2022-07-21 07:53:53,064 (Elapsed: 00:03:26) train_loss 66606.304688
+2022-07-21 07:53:53,065 (Elapsed: 00:03:26) epoch 91
+2022-07-21 07:53:54,504 (Elapsed: 00:03:28) train_loss 66762.765625
+2022-07-21 07:53:54,505 (Elapsed: 00:03:28) epoch 92
+2022-07-21 07:53:55,923 (Elapsed: 00:03:29) train_loss 66676.265625
+2022-07-21 07:53:55,924 (Elapsed: 00:03:29) epoch 93
+2022-07-21 07:53:57,317 (Elapsed: 00:03:31) train_loss 66592.796875
+2022-07-21 07:53:57,318 (Elapsed: 00:03:31) epoch 94
+2022-07-21 07:53:58,743 (Elapsed: 00:03:32) train_loss 67032.531250
+2022-07-21 07:54:02,325 (Elapsed: 00:03:36) val, step: 2, NELBO: 69035.960938, neg Log p 68921.929688
+2022-07-21 07:54:02,325 (Elapsed: 00:03:36) valid bpd nelbo 0.506581
+2022-07-21 07:54:02,325 (Elapsed: 00:03:36) valid bpd log p 0.505744
+2022-07-21 07:54:02,328 (Elapsed: 00:03:36) saving the model.
+2022-07-21 07:54:02,467 (Elapsed: 00:03:36) epoch 95
+2022-07-21 07:54:03,928 (Elapsed: 00:03:37) train_loss 66694.015625
+2022-07-21 07:54:03,928 (Elapsed: 00:03:37) epoch 96
+2022-07-21 07:54:05,357 (Elapsed: 00:03:39) train_loss 66606.406250
+2022-07-21 07:54:05,358 (Elapsed: 00:03:39) epoch 97
+2022-07-21 07:54:06,774 (Elapsed: 00:03:40) train_loss 66296.335938
+2022-07-21 07:54:06,774 (Elapsed: 00:03:40) epoch 98
+2022-07-21 07:54:08,210 (Elapsed: 00:03:41) train_loss 66453.945312
+2022-07-21 07:54:08,211 (Elapsed: 00:03:41) epoch 99
+2022-07-21 07:54:09,377 (Elapsed: 00:03:43) train 199 66264.820312
+2022-07-21 07:54:09,627 (Elapsed: 00:03:43) train_loss 66264.820312
+2022-07-21 07:54:13,197 (Elapsed: 00:03:46) val, step: 2, NELBO: 68421.250000, neg Log p 68308.414062
+2022-07-21 07:54:13,197 (Elapsed: 00:03:46) valid bpd nelbo 0.502070
+2022-07-21 07:54:13,198 (Elapsed: 00:03:46) valid bpd log p 0.501242
+2022-07-21 07:54:13,200 (Elapsed: 00:03:46) saving the model.
+2022-07-21 07:54:13,333 (Elapsed: 00:03:47) epoch 100
+2022-07-21 07:54:14,719 (Elapsed: 00:03:48) train_loss 66445.898438
+2022-07-21 07:54:14,720 (Elapsed: 00:03:48) saving the model at milestone epochs.
+2022-07-21 07:54:14,826 (Elapsed: 00:03:48) epoch 101
+2022-07-21 07:54:16,248 (Elapsed: 00:03:49) train_loss 66604.078125
+2022-07-21 07:54:16,249 (Elapsed: 00:03:49) epoch 102
+2022-07-21 07:54:17,689 (Elapsed: 00:03:51) train_loss 66382.156250
+2022-07-21 07:54:17,690 (Elapsed: 00:03:51) epoch 103
+2022-07-21 07:54:19,090 (Elapsed: 00:03:52) train_loss 66397.914062
+2022-07-21 07:54:19,091 (Elapsed: 00:03:52) epoch 104
+2022-07-21 07:54:20,488 (Elapsed: 00:03:54) train_loss 66414.890625
+2022-07-21 07:54:24,056 (Elapsed: 00:03:57) val, step: 2, NELBO: 68024.875000, neg Log p 67919.757812
+2022-07-21 07:54:24,056 (Elapsed: 00:03:57) valid bpd nelbo 0.499162
+2022-07-21 07:54:24,057 (Elapsed: 00:03:57) valid bpd log p 0.498390
+2022-07-21 07:54:24,059 (Elapsed: 00:03:57) saving the model.
+2022-07-21 08:22:13,748 (Elapsed: 00:00:00) args = Namespace(arch_instance='res_mbconv', autocast_eval=True, autocast_train=True, batch_size=2, channel_mult=[1, 2, 2], cont_training=False, crop=256, data='../data/raw/256/', dataset='retina', decoder_dist='bin', distributed=True, epochs=200, global_rank=0, kl_anneal_portion=1.0, kl_const_coeff=0.0001, kl_const_portion=0.0001, kl_max_coeff=0.7, learning_rate_min_vae=0.0001, learning_rate_vae=0.01, local_rank=0, log_sig_q_scale=5.0, master_address='127.0.0.1', node_rank=0, num_cell_per_cond_dec=1, num_cell_per_cond_enc=1, num_channels_dec=64, num_channels_enc=64, num_groups_per_scale=2, num_latent_per_group=20, num_latent_scales=1, num_nf=0, num_postprocess_blocks=2, num_postprocess_cells=3, num_preprocess_blocks=2, num_preprocess_cells=3, num_proc_node=1, num_process_per_node=1, num_total_iter=400, num_x_bits=8, progressive_input_vae='none', resize=256, root='../MNIST/', save='../MNIST//../save_dir/vae', seed=1, use_se=True, warmup_epochs=5, weight_decay=0.0003, weight_decay_norm=0.01, weight_decay_norm_anneal=False, weight_decay_norm_init=10.0)
+2022-07-21 08:22:17,588 (Elapsed: 00:00:03) VAE: param size = 3.523070M 
+2022-07-21 08:22:17,665 (Elapsed: 00:00:03) epoch 0
+2022-07-21 08:22:23,716 (Elapsed: 00:00:09) train_loss 137208.375000
+2022-07-21 08:22:23,717 (Elapsed: 00:00:09) epoch 1
+2022-07-21 08:22:25,037 (Elapsed: 00:00:11) train_loss 137252.000000
+2022-07-21 08:22:25,037 (Elapsed: 00:00:11) epoch 2
+2022-07-21 08:22:26,364 (Elapsed: 00:00:12) train_loss 137211.593750
+2022-07-21 08:22:26,365 (Elapsed: 00:00:12) epoch 3
+2022-07-21 08:22:27,676 (Elapsed: 00:00:13) train_loss 137221.156250
+2022-07-21 08:22:27,678 (Elapsed: 00:00:13) epoch 4
+2022-07-21 08:22:28,996 (Elapsed: 00:00:15) train_loss 137266.156250
+2022-07-21 08:22:36,095 (Elapsed: 00:00:22) val, step: 2, NELBO: 139836.718750, neg Log p 139688.609375
+2022-07-21 08:22:36,096 (Elapsed: 00:00:22) valid bpd nelbo 1.026112
+2022-07-21 08:22:36,096 (Elapsed: 00:00:22) valid bpd log p 1.025025
+2022-07-21 08:22:36,098 (Elapsed: 00:00:22) saving the model.
+2022-07-21 08:22:36,160 (Elapsed: 00:00:22) epoch 5
+2022-07-21 08:22:37,515 (Elapsed: 00:00:23) train_loss 145127.625000
+2022-07-21 08:22:37,516 (Elapsed: 00:00:23) epoch 6
+2022-07-21 08:22:38,875 (Elapsed: 00:00:25) train_loss 402401.125000
+2022-07-21 08:22:38,876 (Elapsed: 00:00:25) epoch 7
+2022-07-21 08:22:40,226 (Elapsed: 00:00:26) train_loss 117468.203125
+2022-07-21 08:22:40,227 (Elapsed: 00:00:26) epoch 8
+2022-07-21 08:22:41,547 (Elapsed: 00:00:27) train_loss 110492.226562
+2022-07-21 08:22:41,548 (Elapsed: 00:00:27) epoch 9
+2022-07-21 08:22:42,891 (Elapsed: 00:00:29) train_loss 107083.335938
+2022-07-21 08:23:12,426 (Elapsed: 00:00:00) args = Namespace(arch_instance='res_mbconv', autocast_eval=True, autocast_train=True, batch_size=2, channel_mult=[1, 2, 2], cont_training=False, crop=256, data='../data/raw/256/', dataset='retina', decoder_dist='bin', distributed=True, epochs=200, global_rank=0, kl_anneal_portion=1.0, kl_const_coeff=0.0001, kl_const_portion=0.0001, kl_max_coeff=0.7, learning_rate_min_vae=0.0001, learning_rate_vae=0.01, local_rank=0, log_sig_q_scale=5.0, master_address='127.0.0.1', node_rank=0, num_cell_per_cond_dec=1, num_cell_per_cond_enc=1, num_channels_dec=64, num_channels_enc=64, num_groups_per_scale=2, num_latent_per_group=20, num_latent_scales=1, num_nf=0, num_postprocess_blocks=2, num_postprocess_cells=3, num_preprocess_blocks=2, num_preprocess_cells=3, num_proc_node=1, num_process_per_node=1, num_total_iter=400, num_x_bits=8, progressive_input_vae='none', resize=256, root='../MNIST/', save='../MNIST//../save_dir/vae', seed=1, use_se=True, warmup_epochs=5, weight_decay=0.0003, weight_decay_norm=0.01, weight_decay_norm_anneal=False, weight_decay_norm_init=10.0)
+2022-07-21 08:23:16,193 (Elapsed: 00:00:03) VAE: param size = 3.523070M 
+2022-07-21 08:23:16,268 (Elapsed: 00:00:03) epoch 0
+2022-07-21 08:23:22,317 (Elapsed: 00:00:09) train_loss 137208.375000
+2022-07-21 08:23:22,318 (Elapsed: 00:00:09) epoch 1
+2022-07-21 08:23:23,637 (Elapsed: 00:00:11) train_loss 137252.000000
+2022-07-21 08:23:23,638 (Elapsed: 00:00:11) epoch 2
+2022-07-21 08:23:24,962 (Elapsed: 00:00:12) train_loss 137211.593750
+2022-07-21 08:23:24,962 (Elapsed: 00:00:12) epoch 3
+2022-07-21 08:23:26,297 (Elapsed: 00:00:13) train_loss 137221.156250
+2022-07-21 08:23:26,298 (Elapsed: 00:00:13) epoch 4
+2022-07-21 08:23:27,625 (Elapsed: 00:00:15) train_loss 137266.156250
+2022-07-21 08:23:34,851 (Elapsed: 00:00:22) val, step: 2, NELBO: 139836.718750, neg Log p 139688.609375
+2022-07-21 08:23:34,852 (Elapsed: 00:00:22) valid bpd nelbo 1.026112
+2022-07-21 08:23:34,852 (Elapsed: 00:00:22) valid bpd log p 1.025025
+2022-07-21 08:23:34,855 (Elapsed: 00:00:22) saving the model.
+2022-07-21 08:23:34,924 (Elapsed: 00:00:22) epoch 5
+2022-07-21 08:23:36,292 (Elapsed: 00:00:23) train_loss 145129.406250
+2022-07-21 08:23:36,293 (Elapsed: 00:00:23) epoch 6
+2022-07-21 08:23:37,626 (Elapsed: 00:00:25) train_loss 402487.625000
+2022-07-21 08:23:37,627 (Elapsed: 00:00:25) epoch 7
+2022-07-21 08:23:38,975 (Elapsed: 00:00:26) train_loss 117339.703125
+2022-07-21 08:23:38,976 (Elapsed: 00:00:26) epoch 8
+2022-07-21 08:23:40,301 (Elapsed: 00:00:27) train_loss 110688.328125
+2022-07-21 08:23:40,302 (Elapsed: 00:00:27) epoch 9
+2022-07-21 08:23:41,652 (Elapsed: 00:00:29) train_loss 105379.359375
+2022-07-21 08:23:45,145 (Elapsed: 00:00:32) val, step: 2, NELBO: 178650.671875, neg Log p 178047.046875
+2022-07-21 08:23:45,146 (Elapsed: 00:00:32) valid bpd nelbo 1.310925
+2022-07-21 08:23:45,146 (Elapsed: 00:00:32) valid bpd log p 1.306496
+2022-07-21 08:23:45,148 (Elapsed: 00:00:32) epoch 10
+2022-07-21 08:23:46,490 (Elapsed: 00:00:34) train_loss 92025.000000
+2022-07-21 08:23:46,491 (Elapsed: 00:00:34) epoch 11
+2022-07-21 08:23:47,838 (Elapsed: 00:00:35) train_loss 85516.859375
+2022-07-21 08:23:47,839 (Elapsed: 00:00:35) epoch 12
+2022-07-21 08:23:49,199 (Elapsed: 00:00:36) train_loss 85696.062500
+2022-07-21 08:23:49,200 (Elapsed: 00:00:36) epoch 13
+2022-07-21 08:23:50,540 (Elapsed: 00:00:38) train_loss 84362.281250
+2022-07-21 08:23:50,541 (Elapsed: 00:00:38) epoch 14
+2022-07-21 08:23:51,907 (Elapsed: 00:00:39) train_loss 80909.140625
+2022-07-21 08:23:55,434 (Elapsed: 00:00:43) val, step: 2, NELBO: 136170.468750, neg Log p 135837.812500
+2022-07-21 08:23:55,435 (Elapsed: 00:00:43) valid bpd nelbo 0.999209
+2022-07-21 08:23:55,435 (Elapsed: 00:00:43) valid bpd log p 0.996768
+2022-07-21 08:23:55,436 (Elapsed: 00:00:43) saving the model.
+2022-07-21 08:23:55,566 (Elapsed: 00:00:43) epoch 15
+2022-07-21 08:23:56,921 (Elapsed: 00:00:44) train_loss 79557.968750
+2022-07-21 08:23:56,922 (Elapsed: 00:00:44) epoch 16
+2022-07-21 08:23:58,274 (Elapsed: 00:00:45) train_loss 79989.195312
+2022-07-21 08:23:58,275 (Elapsed: 00:00:45) epoch 17
+2022-07-21 08:23:59,636 (Elapsed: 00:00:47) train_loss 78463.585938
+2022-07-21 08:23:59,636 (Elapsed: 00:00:47) epoch 18
+2022-07-21 08:24:00,987 (Elapsed: 00:00:48) train_loss 77143.039062
+2022-07-21 08:24:00,988 (Elapsed: 00:00:48) epoch 19
+2022-07-21 08:24:02,363 (Elapsed: 00:00:49) train_loss 75609.210938
+2022-07-21 08:24:05,927 (Elapsed: 00:00:53) val, step: 2, NELBO: 100735.640625, neg Log p 100408.664062
+2022-07-21 08:24:05,927 (Elapsed: 00:00:53) valid bpd nelbo 0.739191
+2022-07-21 08:24:05,928 (Elapsed: 00:00:53) valid bpd log p 0.736791
+2022-07-21 08:24:05,930 (Elapsed: 00:00:53) saving the model.
+2022-07-21 08:24:06,067 (Elapsed: 00:00:53) epoch 20
+2022-07-21 08:24:07,502 (Elapsed: 00:00:55) train_loss 74639.921875
+2022-07-21 08:24:07,502 (Elapsed: 00:00:55) epoch 21
+2022-07-21 08:24:08,881 (Elapsed: 00:00:56) train_loss 74103.546875
+2022-07-21 08:24:08,881 (Elapsed: 00:00:56) epoch 22
+2022-07-21 08:24:10,250 (Elapsed: 00:00:57) train_loss 73434.187500
+2022-07-21 08:24:10,251 (Elapsed: 00:00:57) epoch 23
+2022-07-21 08:24:11,597 (Elapsed: 00:00:59) train_loss 72995.406250
+2022-07-21 08:24:11,598 (Elapsed: 00:00:59) epoch 24
+2022-07-21 08:24:12,968 (Elapsed: 00:01:00) train_loss 72462.085938
+2022-07-21 08:24:16,566 (Elapsed: 00:01:04) val, step: 2, NELBO: 89021.539062, neg Log p 88730.156250
+2022-07-21 08:24:16,567 (Elapsed: 00:01:04) valid bpd nelbo 0.653234
+2022-07-21 08:24:16,567 (Elapsed: 00:01:04) valid bpd log p 0.651095
+2022-07-21 08:24:16,570 (Elapsed: 00:01:04) saving the model.
+2022-07-21 08:24:16,707 (Elapsed: 00:01:04) epoch 25
+2022-07-21 08:24:18,108 (Elapsed: 00:01:05) train_loss 72130.757812
+2022-07-21 08:24:18,109 (Elapsed: 00:01:05) epoch 26
+2022-07-21 08:24:19,476 (Elapsed: 00:01:07) train_loss 71963.093750
+2022-07-21 08:24:19,476 (Elapsed: 00:01:07) epoch 27
+2022-07-21 08:24:20,846 (Elapsed: 00:01:08) train_loss 71367.890625
+2022-07-21 08:24:20,846 (Elapsed: 00:01:08) epoch 28
+2022-07-21 08:24:22,212 (Elapsed: 00:01:09) train_loss 71297.265625
+2022-07-21 08:24:22,213 (Elapsed: 00:01:09) epoch 29
+2022-07-21 08:24:23,571 (Elapsed: 00:01:11) train_loss 70681.351562
+2022-07-21 08:24:27,195 (Elapsed: 00:01:14) val, step: 2, NELBO: 84368.429688, neg Log p 84181.406250
+2022-07-21 08:24:27,195 (Elapsed: 00:01:14) valid bpd nelbo 0.619089
+2022-07-21 08:24:27,196 (Elapsed: 00:01:14) valid bpd log p 0.617717
+2022-07-21 08:24:27,198 (Elapsed: 00:01:14) saving the model.
+2022-07-21 08:24:27,332 (Elapsed: 00:01:14) epoch 30
+2022-07-21 08:24:28,704 (Elapsed: 00:01:16) train_loss 71134.054688
+2022-07-21 08:24:28,705 (Elapsed: 00:01:16) epoch 31
+2022-07-21 08:24:30,072 (Elapsed: 00:01:17) train_loss 70423.375000
+2022-07-21 08:24:30,073 (Elapsed: 00:01:17) epoch 32
+2022-07-21 08:24:31,452 (Elapsed: 00:01:19) train_loss 70603.281250
+2022-07-21 08:24:31,453 (Elapsed: 00:01:19) epoch 33
+2022-07-21 08:24:32,832 (Elapsed: 00:01:20) train_loss 70236.343750
+2022-07-21 08:24:32,833 (Elapsed: 00:01:20) epoch 34
+2022-07-21 08:24:34,235 (Elapsed: 00:01:21) train_loss 70280.796875
+2022-07-21 08:24:37,885 (Elapsed: 00:01:25) val, step: 2, NELBO: 80452.210938, neg Log p 80266.601562
+2022-07-21 08:24:37,886 (Elapsed: 00:01:25) valid bpd nelbo 0.590352
+2022-07-21 08:24:37,886 (Elapsed: 00:01:25) valid bpd log p 0.588990
+2022-07-21 08:24:37,888 (Elapsed: 00:01:25) saving the model.
+2022-07-21 08:24:38,023 (Elapsed: 00:01:25) epoch 35
+2022-07-21 08:24:39,414 (Elapsed: 00:01:26) train_loss 70029.250000
+2022-07-21 08:24:39,415 (Elapsed: 00:01:26) epoch 36
+2022-07-21 08:24:40,771 (Elapsed: 00:01:28) train_loss 69784.734375
+2022-07-21 08:24:40,772 (Elapsed: 00:01:28) epoch 37
+2022-07-21 08:24:42,121 (Elapsed: 00:01:29) train_loss 69533.515625
+2022-07-21 08:24:42,122 (Elapsed: 00:01:29) epoch 38
+2022-07-21 08:24:43,477 (Elapsed: 00:01:31) train_loss 69493.750000
+2022-07-21 08:24:43,478 (Elapsed: 00:01:31) epoch 39
+2022-07-21 08:24:44,830 (Elapsed: 00:01:32) train_loss 69219.343750
+2022-07-21 08:24:48,485 (Elapsed: 00:01:36) val, step: 2, NELBO: 78146.617188, neg Log p 77978.554688
+2022-07-21 08:24:48,485 (Elapsed: 00:01:36) valid bpd nelbo 0.573434
+2022-07-21 08:24:48,486 (Elapsed: 00:01:36) valid bpd log p 0.572201
+2022-07-21 08:24:48,488 (Elapsed: 00:01:36) saving the model.
+2022-07-21 08:24:48,633 (Elapsed: 00:01:36) epoch 40
+2022-07-21 08:24:50,016 (Elapsed: 00:01:37) train_loss 69252.289062
+2022-07-21 08:24:50,017 (Elapsed: 00:01:37) epoch 41
+2022-07-21 08:24:51,394 (Elapsed: 00:01:38) train_loss 68962.265625
+2022-07-21 08:24:51,394 (Elapsed: 00:01:38) epoch 42
+2022-07-21 08:24:52,776 (Elapsed: 00:01:40) train_loss 69099.187500
+2022-07-21 08:24:52,777 (Elapsed: 00:01:40) epoch 43
+2022-07-21 08:24:54,149 (Elapsed: 00:01:41) train_loss 68758.937500
+2022-07-21 08:24:54,150 (Elapsed: 00:01:41) epoch 44
+2022-07-21 08:24:55,507 (Elapsed: 00:01:43) train_loss 68583.046875
+2022-07-21 08:24:59,137 (Elapsed: 00:01:46) val, step: 2, NELBO: 76623.523438, neg Log p 76462.367188
+2022-07-21 08:24:59,138 (Elapsed: 00:01:46) valid bpd nelbo 0.562258
+2022-07-21 08:24:59,138 (Elapsed: 00:01:46) valid bpd log p 0.561075
+2022-07-21 08:24:59,140 (Elapsed: 00:01:46) saving the model.
+2022-07-21 08:24:59,276 (Elapsed: 00:01:46) epoch 45
+2022-07-21 08:25:00,658 (Elapsed: 00:01:48) train_loss 68837.257812
+2022-07-21 08:25:00,659 (Elapsed: 00:01:48) epoch 46
+2022-07-21 08:25:02,045 (Elapsed: 00:01:49) train_loss 68551.195312
+2022-07-21 08:25:02,045 (Elapsed: 00:01:49) epoch 47
+2022-07-21 08:25:03,404 (Elapsed: 00:01:50) train_loss 68497.437500
+2022-07-21 08:25:03,405 (Elapsed: 00:01:50) epoch 48
+2022-07-21 08:25:04,765 (Elapsed: 00:01:52) train_loss 68592.031250
+2022-07-21 08:25:04,766 (Elapsed: 00:01:52) epoch 49
+2022-07-21 08:25:05,914 (Elapsed: 00:01:53) train 99 68323.171875
+2022-07-21 08:25:06,154 (Elapsed: 00:01:53) train_loss 68323.171875
+2022-07-21 08:25:09,748 (Elapsed: 00:01:57) val, step: 2, NELBO: 74938.703125, neg Log p 74761.601562
+2022-07-21 08:25:09,748 (Elapsed: 00:01:57) valid bpd nelbo 0.549895
+2022-07-21 08:25:09,748 (Elapsed: 00:01:57) valid bpd log p 0.548595
+2022-07-21 08:25:09,751 (Elapsed: 00:01:57) saving the model.
+2022-07-21 08:25:09,885 (Elapsed: 00:01:57) epoch 50
+2022-07-21 08:25:11,246 (Elapsed: 00:01:58) train_loss 68158.828125
+2022-07-21 08:25:11,247 (Elapsed: 00:01:58) epoch 51
+2022-07-21 08:25:12,600 (Elapsed: 00:02:00) train_loss 68044.265625
+2022-07-21 08:25:12,601 (Elapsed: 00:02:00) epoch 52
+2022-07-21 08:25:13,954 (Elapsed: 00:02:01) train_loss 67966.250000
+2022-07-21 08:25:13,955 (Elapsed: 00:02:01) epoch 53
+2022-07-21 08:25:15,319 (Elapsed: 00:02:02) train_loss 68140.835938
+2022-07-21 08:25:15,320 (Elapsed: 00:02:02) epoch 54
+2022-07-21 08:25:16,687 (Elapsed: 00:02:04) train_loss 67572.007812
+2022-07-21 08:25:20,282 (Elapsed: 00:02:07) val, step: 2, NELBO: 73982.585938, neg Log p 73825.914062
+2022-07-21 08:25:20,283 (Elapsed: 00:02:07) valid bpd nelbo 0.542879
+2022-07-21 08:25:20,283 (Elapsed: 00:02:07) valid bpd log p 0.541729
+2022-07-21 08:25:20,285 (Elapsed: 00:02:07) saving the model.
+2022-07-21 08:25:20,421 (Elapsed: 00:02:07) epoch 55
+2022-07-21 08:25:21,779 (Elapsed: 00:02:09) train_loss 68169.546875
+2022-07-21 08:25:21,780 (Elapsed: 00:02:09) epoch 56
+2022-07-21 08:25:23,138 (Elapsed: 00:02:10) train_loss 67995.921875
+2022-07-21 08:25:23,139 (Elapsed: 00:02:10) epoch 57
+2022-07-21 08:25:24,521 (Elapsed: 00:02:12) train_loss 67694.734375
+2022-07-21 08:25:24,522 (Elapsed: 00:02:12) epoch 58
+2022-07-21 08:25:25,894 (Elapsed: 00:02:13) train_loss 68044.546875
+2022-07-21 08:25:25,895 (Elapsed: 00:02:13) epoch 59
+2022-07-21 08:25:27,245 (Elapsed: 00:02:14) train_loss 67538.453125
+2022-07-21 08:25:30,837 (Elapsed: 00:02:18) val, step: 2, NELBO: 73148.054688, neg Log p 73005.257812
+2022-07-21 08:25:30,838 (Elapsed: 00:02:18) valid bpd nelbo 0.536755
+2022-07-21 08:25:30,838 (Elapsed: 00:02:18) valid bpd log p 0.535707
+2022-07-21 08:25:30,840 (Elapsed: 00:02:18) saving the model.
+2022-07-21 08:25:30,974 (Elapsed: 00:02:18) epoch 60
+2022-07-21 08:25:32,342 (Elapsed: 00:02:19) train_loss 67796.109375
+2022-07-21 08:25:32,343 (Elapsed: 00:02:19) epoch 61
+2022-07-21 08:25:33,724 (Elapsed: 00:02:21) train_loss 67830.546875
+2022-07-21 08:25:33,725 (Elapsed: 00:02:21) epoch 62
+2022-07-21 08:25:35,103 (Elapsed: 00:02:22) train_loss 67407.335938
+2022-07-21 08:25:35,104 (Elapsed: 00:02:22) epoch 63
+2022-07-21 08:25:36,457 (Elapsed: 00:02:24) train_loss 67616.859375
+2022-07-21 08:25:36,458 (Elapsed: 00:02:24) epoch 64
+2022-07-21 08:25:37,845 (Elapsed: 00:02:25) train_loss 67448.609375
+2022-07-21 08:25:41,457 (Elapsed: 00:02:29) val, step: 2, NELBO: 72495.195312, neg Log p 72381.304688
+2022-07-21 08:25:41,458 (Elapsed: 00:02:29) valid bpd nelbo 0.531964
+2022-07-21 08:25:41,458 (Elapsed: 00:02:29) valid bpd log p 0.531129
+2022-07-21 08:25:41,460 (Elapsed: 00:02:29) saving the model.
+2022-07-21 08:25:41,594 (Elapsed: 00:02:29) epoch 65
+2022-07-21 08:25:42,980 (Elapsed: 00:02:30) train_loss 67501.656250
+2022-07-21 08:25:42,981 (Elapsed: 00:02:30) epoch 66
+2022-07-21 08:25:44,345 (Elapsed: 00:02:31) train_loss 67560.281250
+2022-07-21 08:25:44,346 (Elapsed: 00:02:31) epoch 67
+2022-07-21 08:25:45,705 (Elapsed: 00:02:33) train_loss 67868.281250
+2022-07-21 08:25:45,706 (Elapsed: 00:02:33) epoch 68
+2022-07-21 08:25:47,072 (Elapsed: 00:02:34) train_loss 67322.578125
+2022-07-21 08:25:47,073 (Elapsed: 00:02:34) epoch 69
+2022-07-21 08:25:48,419 (Elapsed: 00:02:35) train_loss 67607.664062
+2022-07-21 08:25:52,041 (Elapsed: 00:02:39) val, step: 2, NELBO: 71280.726562, neg Log p 71138.562500
+2022-07-21 08:25:52,042 (Elapsed: 00:02:39) valid bpd nelbo 0.523053
+2022-07-21 08:25:52,042 (Elapsed: 00:02:39) valid bpd log p 0.522010
+2022-07-21 08:25:52,044 (Elapsed: 00:02:39) saving the model.
+2022-07-21 08:25:52,191 (Elapsed: 00:02:39) epoch 70
+2022-07-21 08:25:53,547 (Elapsed: 00:02:41) train_loss 67250.593750
+2022-07-21 08:25:53,547 (Elapsed: 00:02:41) epoch 71
+2022-07-21 08:25:54,919 (Elapsed: 00:02:42) train_loss 67163.531250
+2022-07-21 08:25:54,920 (Elapsed: 00:02:42) epoch 72
+2022-07-21 08:25:56,297 (Elapsed: 00:02:43) train_loss 67270.984375
+2022-07-21 08:25:56,298 (Elapsed: 00:02:43) epoch 73
+2022-07-21 08:25:57,660 (Elapsed: 00:02:45) train_loss 67533.937500
+2022-07-21 08:25:57,661 (Elapsed: 00:02:45) epoch 74
+2022-07-21 08:25:59,000 (Elapsed: 00:02:46) train_loss 67210.320312
+2022-07-21 08:26:02,637 (Elapsed: 00:02:50) val, step: 2, NELBO: 71444.640625, neg Log p 71330.078125
+2022-07-21 08:26:02,637 (Elapsed: 00:02:50) valid bpd nelbo 0.524256
+2022-07-21 08:26:02,637 (Elapsed: 00:02:50) valid bpd log p 0.523415
+2022-07-21 08:26:02,640 (Elapsed: 00:02:50) epoch 75
+2022-07-21 08:26:04,016 (Elapsed: 00:02:51) train_loss 67301.453125
+2022-07-21 08:26:04,017 (Elapsed: 00:02:51) epoch 76
+2022-07-21 08:26:05,369 (Elapsed: 00:02:52) train_loss 67546.546875
+2022-07-21 08:26:05,370 (Elapsed: 00:02:52) epoch 77
+2022-07-21 08:26:06,762 (Elapsed: 00:02:54) train_loss 67331.031250
+2022-07-21 08:26:06,763 (Elapsed: 00:02:54) epoch 78
+2022-07-21 08:26:08,126 (Elapsed: 00:02:55) train_loss 67194.687500
+2022-07-21 08:26:08,126 (Elapsed: 00:02:55) epoch 79
+2022-07-21 08:26:09,487 (Elapsed: 00:02:57) train_loss 67201.937500
+2022-07-21 08:26:13,116 (Elapsed: 00:03:00) val, step: 2, NELBO: 70898.609375, neg Log p 70788.000000
+2022-07-21 08:26:13,117 (Elapsed: 00:03:00) valid bpd nelbo 0.520249
+2022-07-21 08:26:13,117 (Elapsed: 00:03:00) valid bpd log p 0.519437
+2022-07-21 08:26:13,119 (Elapsed: 00:03:00) saving the model.
+2022-07-21 08:26:13,255 (Elapsed: 00:03:00) epoch 80
+2022-07-21 08:26:14,633 (Elapsed: 00:03:02) train_loss 67198.304688
+2022-07-21 08:26:14,634 (Elapsed: 00:03:02) epoch 81
+2022-07-21 08:26:15,997 (Elapsed: 00:03:03) train_loss 67283.085938
+2022-07-21 08:26:15,998 (Elapsed: 00:03:03) epoch 82
+2022-07-21 08:26:17,356 (Elapsed: 00:03:04) train_loss 67116.523438
+2022-07-21 08:26:17,357 (Elapsed: 00:03:04) epoch 83
+2022-07-21 08:26:18,722 (Elapsed: 00:03:06) train_loss 67256.953125
+2022-07-21 08:26:18,722 (Elapsed: 00:03:06) epoch 84
+2022-07-21 08:26:20,089 (Elapsed: 00:03:07) train_loss 67173.375000
+2022-07-21 08:26:23,705 (Elapsed: 00:03:11) val, step: 2, NELBO: 70302.632812, neg Log p 70145.515625
+2022-07-21 08:26:23,706 (Elapsed: 00:03:11) valid bpd nelbo 0.515876
+2022-07-21 08:26:23,706 (Elapsed: 00:03:11) valid bpd log p 0.514723
+2022-07-21 08:26:23,708 (Elapsed: 00:03:11) saving the model.
+2022-07-21 08:26:23,855 (Elapsed: 00:03:11) epoch 85
+2022-07-21 08:26:25,228 (Elapsed: 00:03:12) train_loss 67019.562500
+2022-07-21 08:26:25,229 (Elapsed: 00:03:12) epoch 86
+2022-07-21 08:26:26,585 (Elapsed: 00:03:14) train_loss 66749.929688
+2022-07-21 08:26:26,585 (Elapsed: 00:03:14) epoch 87
+2022-07-21 08:26:27,944 (Elapsed: 00:03:15) train_loss 66974.195312
+2022-07-21 08:26:27,945 (Elapsed: 00:03:15) epoch 88
+2022-07-21 08:26:29,312 (Elapsed: 00:03:16) train_loss 67172.835938
+2022-07-21 08:26:29,312 (Elapsed: 00:03:16) epoch 89
+2022-07-21 08:26:30,658 (Elapsed: 00:03:18) train_loss 66906.796875
+2022-07-21 08:26:34,273 (Elapsed: 00:03:21) val, step: 2, NELBO: 69499.585938, neg Log p 69354.085938
+2022-07-21 08:26:34,273 (Elapsed: 00:03:21) valid bpd nelbo 0.509983
+2022-07-21 08:26:34,274 (Elapsed: 00:03:21) valid bpd log p 0.508915
+2022-07-21 08:26:34,276 (Elapsed: 00:03:21) saving the model.
+2022-07-21 08:26:34,412 (Elapsed: 00:03:21) epoch 90
+2022-07-21 08:26:35,772 (Elapsed: 00:03:23) train_loss 66845.812500
+2022-07-21 08:26:35,772 (Elapsed: 00:03:23) epoch 91
+2022-07-21 08:26:37,204 (Elapsed: 00:03:24) train_loss 66990.968750
+2022-07-21 08:26:37,205 (Elapsed: 00:03:24) epoch 92
+2022-07-21 08:26:38,550 (Elapsed: 00:03:26) train_loss 66903.390625
+2022-07-21 08:26:38,551 (Elapsed: 00:03:26) epoch 93
+2022-07-21 08:26:39,895 (Elapsed: 00:03:27) train_loss 66813.601562
+2022-07-21 08:26:39,896 (Elapsed: 00:03:27) epoch 94
+2022-07-21 08:26:41,248 (Elapsed: 00:03:28) train_loss 67256.132812
+2022-07-21 08:26:44,855 (Elapsed: 00:03:32) val, step: 2, NELBO: 69402.742188, neg Log p 69277.468750
+2022-07-21 08:26:44,855 (Elapsed: 00:03:32) valid bpd nelbo 0.509272
+2022-07-21 08:26:44,855 (Elapsed: 00:03:32) valid bpd log p 0.508353
+2022-07-21 08:26:44,858 (Elapsed: 00:03:32) saving the model.
+2022-07-21 08:26:44,991 (Elapsed: 00:03:32) epoch 95
+2022-07-21 08:26:46,362 (Elapsed: 00:03:33) train_loss 66878.617188
+2022-07-21 08:26:46,363 (Elapsed: 00:03:33) epoch 96
+2022-07-21 08:26:47,735 (Elapsed: 00:03:35) train_loss 66817.937500
+2022-07-21 08:26:47,736 (Elapsed: 00:03:35) epoch 97
+2022-07-21 08:26:49,092 (Elapsed: 00:03:36) train_loss 66499.601562
+2022-07-21 08:26:49,093 (Elapsed: 00:03:36) epoch 98
+2022-07-21 08:26:50,507 (Elapsed: 00:03:38) train_loss 66693.218750
+2022-07-21 08:26:50,508 (Elapsed: 00:03:38) epoch 99
+2022-07-21 08:26:51,644 (Elapsed: 00:03:39) train 199 66460.726562
+2022-07-21 08:26:51,883 (Elapsed: 00:03:39) train_loss 66460.726562
+2022-07-21 08:26:55,498 (Elapsed: 00:03:43) val, step: 2, NELBO: 68729.148438, neg Log p 68634.726562
+2022-07-21 08:26:55,502 (Elapsed: 00:03:43) valid bpd nelbo 0.504329
+2022-07-21 08:26:55,502 (Elapsed: 00:03:43) valid bpd log p 0.503637
+2022-07-21 08:26:55,505 (Elapsed: 00:03:43) saving the model.
+2022-07-21 08:26:55,644 (Elapsed: 00:03:43) epoch 100
+2022-07-21 08:26:57,027 (Elapsed: 00:03:44) train_loss 66666.937500
+2022-07-21 08:26:57,027 (Elapsed: 00:03:44) saving the model at milestone epochs.
+2022-07-21 08:26:57,130 (Elapsed: 00:03:44) epoch 101
+2022-07-21 08:26:58,509 (Elapsed: 00:03:46) train_loss 66780.703125
+2022-07-21 08:26:58,509 (Elapsed: 00:03:46) epoch 102
+2022-07-21 08:26:59,877 (Elapsed: 00:03:47) train_loss 66596.695312
+2022-07-21 08:26:59,878 (Elapsed: 00:03:47) epoch 103
+2022-07-21 08:27:01,250 (Elapsed: 00:03:48) train_loss 66596.062500
+2022-07-21 08:27:01,251 (Elapsed: 00:03:48) epoch 104
+2022-07-21 08:27:02,623 (Elapsed: 00:03:50) train_loss 66605.984375
+2022-07-21 08:27:06,246 (Elapsed: 00:03:53) val, step: 2, NELBO: 68371.367188, neg Log p 68267.835938
+2022-07-21 08:27:06,247 (Elapsed: 00:03:53) valid bpd nelbo 0.501704
+2022-07-21 08:27:06,247 (Elapsed: 00:03:53) valid bpd log p 0.500944
+2022-07-21 08:27:06,249 (Elapsed: 00:03:53) saving the model.
+2022-07-21 08:27:06,381 (Elapsed: 00:03:53) epoch 105
+2022-07-21 08:27:07,744 (Elapsed: 00:03:55) train_loss 66632.773438
+2022-07-21 08:27:07,745 (Elapsed: 00:03:55) epoch 106
+2022-07-21 08:27:09,120 (Elapsed: 00:03:56) train_loss 66555.609375
+2022-07-21 08:27:09,121 (Elapsed: 00:03:56) epoch 107
+2022-07-21 08:27:10,486 (Elapsed: 00:03:58) train_loss 66472.859375
+2022-07-21 08:27:10,487 (Elapsed: 00:03:58) epoch 108
+2022-07-21 08:27:11,843 (Elapsed: 00:03:59) train_loss 66378.117188
+2022-07-21 08:27:11,844 (Elapsed: 00:03:59) epoch 109
+2022-07-21 08:27:13,206 (Elapsed: 00:04:00) train_loss 66675.015625
+2022-07-21 08:27:16,836 (Elapsed: 00:04:04) val, step: 2, NELBO: 68427.500000, neg Log p 68333.835938
+2022-07-21 08:27:16,837 (Elapsed: 00:04:04) valid bpd nelbo 0.502116
+2022-07-21 08:27:16,837 (Elapsed: 00:04:04) valid bpd log p 0.501429
+2022-07-21 08:27:16,839 (Elapsed: 00:04:04) epoch 110
+2022-07-21 08:27:18,209 (Elapsed: 00:04:05) train_loss 66398.750000
+2022-07-21 08:27:18,210 (Elapsed: 00:04:05) epoch 111
+2022-07-21 08:27:19,559 (Elapsed: 00:04:07) train_loss 66592.703125
+2022-07-21 08:27:19,560 (Elapsed: 00:04:07) epoch 112
+2022-07-21 08:27:20,925 (Elapsed: 00:04:08) train_loss 66327.492188
+2022-07-21 08:27:20,926 (Elapsed: 00:04:08) epoch 113
+2022-07-21 08:27:22,299 (Elapsed: 00:04:09) train_loss 66411.039062
+2022-07-21 08:27:22,300 (Elapsed: 00:04:09) epoch 114
+2022-07-21 08:27:23,669 (Elapsed: 00:04:11) train_loss 66332.460938
+2022-07-21 08:27:27,303 (Elapsed: 00:04:14) val, step: 2, NELBO: 67791.515625, neg Log p 67667.140625
+2022-07-21 08:27:27,303 (Elapsed: 00:04:14) valid bpd nelbo 0.497449
+2022-07-21 08:27:27,303 (Elapsed: 00:04:14) valid bpd log p 0.496536
+2022-07-21 08:27:27,306 (Elapsed: 00:04:14) saving the model.
+2022-07-21 08:27:27,449 (Elapsed: 00:04:15) epoch 115
+2022-07-21 08:27:28,831 (Elapsed: 00:04:16) train_loss 66173.609375
+2022-07-21 08:27:28,832 (Elapsed: 00:04:16) epoch 116
+2022-07-21 08:27:30,201 (Elapsed: 00:04:17) train_loss 66170.140625
+2022-07-21 08:27:30,202 (Elapsed: 00:04:17) epoch 117
+2022-07-21 08:27:31,591 (Elapsed: 00:04:19) train_loss 66452.101562
+2022-07-21 08:27:31,592 (Elapsed: 00:04:19) epoch 118
+2022-07-21 08:27:32,957 (Elapsed: 00:04:20) train_loss 66280.968750
+2022-07-21 08:27:32,958 (Elapsed: 00:04:20) epoch 119
+2022-07-21 08:27:34,311 (Elapsed: 00:04:21) train_loss 66166.031250
+2022-07-21 08:27:37,942 (Elapsed: 00:04:25) val, step: 2, NELBO: 67507.867188, neg Log p 67363.304688
+2022-07-21 08:27:37,942 (Elapsed: 00:04:25) valid bpd nelbo 0.495368
+2022-07-21 08:27:37,942 (Elapsed: 00:04:25) valid bpd log p 0.494307
+2022-07-21 08:27:37,945 (Elapsed: 00:04:25) saving the model.
+2022-07-21 08:27:38,098 (Elapsed: 00:04:25) epoch 120
+2022-07-21 08:27:39,475 (Elapsed: 00:04:27) train_loss 66415.914062
+2022-07-21 08:27:39,476 (Elapsed: 00:04:27) epoch 121
+2022-07-21 08:27:40,856 (Elapsed: 00:04:28) train_loss 66352.117188
+2022-07-21 08:27:40,857 (Elapsed: 00:04:28) epoch 122
+2022-07-21 08:27:42,210 (Elapsed: 00:04:29) train_loss 66609.000000
+2022-07-21 08:27:42,211 (Elapsed: 00:04:29) epoch 123
+2022-07-21 08:27:43,586 (Elapsed: 00:04:31) train_loss 66863.984375
+2022-07-21 08:27:43,587 (Elapsed: 00:04:31) epoch 124
+2022-07-21 08:27:44,955 (Elapsed: 00:04:32) train_loss 66251.421875
+2022-07-21 08:27:48,573 (Elapsed: 00:04:36) val, step: 2, NELBO: 67505.515625, neg Log p 67382.359375
+2022-07-21 08:27:48,574 (Elapsed: 00:04:36) valid bpd nelbo 0.495351
+2022-07-21 08:27:48,574 (Elapsed: 00:04:36) valid bpd log p 0.494447
+2022-07-21 08:27:48,576 (Elapsed: 00:04:36) epoch 125
+2022-07-21 08:27:49,941 (Elapsed: 00:04:37) train_loss 66441.179688
+2022-07-21 08:27:49,942 (Elapsed: 00:04:37) epoch 126
+2022-07-21 08:27:51,312 (Elapsed: 00:04:38) train_loss 66271.031250
+2022-07-21 08:27:51,313 (Elapsed: 00:04:38) epoch 127
+2022-07-21 08:27:52,731 (Elapsed: 00:04:40) train_loss 65953.687500
+2022-07-21 08:27:52,731 (Elapsed: 00:04:40) epoch 128
+2022-07-21 08:27:54,096 (Elapsed: 00:04:41) train_loss 66324.304688
+2022-07-21 08:27:54,097 (Elapsed: 00:04:41) epoch 129
+2022-07-21 08:27:55,442 (Elapsed: 00:04:43) train_loss 66023.031250
+2022-07-21 08:27:59,061 (Elapsed: 00:04:46) val, step: 2, NELBO: 67365.171875, neg Log p 67249.031250
+2022-07-21 08:27:59,062 (Elapsed: 00:04:46) valid bpd nelbo 0.494321
+2022-07-21 08:27:59,062 (Elapsed: 00:04:46) valid bpd log p 0.493468
+2022-07-21 08:27:59,064 (Elapsed: 00:04:46) saving the model.
+2022-07-21 08:27:59,209 (Elapsed: 00:04:46) epoch 130
+2022-07-21 08:28:00,572 (Elapsed: 00:04:48) train_loss 65853.640625
+2022-07-21 08:28:00,573 (Elapsed: 00:04:48) epoch 131
+2022-07-21 08:28:01,962 (Elapsed: 00:04:49) train_loss 65918.859375
+2022-07-21 08:28:01,963 (Elapsed: 00:04:49) epoch 132
+2022-07-21 08:28:03,364 (Elapsed: 00:04:50) train_loss 66291.687500
+2022-07-21 08:28:03,365 (Elapsed: 00:04:50) epoch 133
+2022-07-21 08:28:04,725 (Elapsed: 00:04:52) train_loss 66067.562500
+2022-07-21 08:28:04,726 (Elapsed: 00:04:52) epoch 134
+2022-07-21 08:28:06,087 (Elapsed: 00:04:53) train_loss 66030.890625
+2022-07-21 08:28:09,703 (Elapsed: 00:04:57) val, step: 2, NELBO: 67028.804688, neg Log p 66920.117188
+2022-07-21 08:28:09,703 (Elapsed: 00:04:57) valid bpd nelbo 0.491852
+2022-07-21 08:28:09,703 (Elapsed: 00:04:57) valid bpd log p 0.491055
+2022-07-21 08:28:09,706 (Elapsed: 00:04:57) saving the model.
+2022-07-21 08:28:09,839 (Elapsed: 00:04:57) epoch 135
+2022-07-21 08:28:11,226 (Elapsed: 00:04:58) train_loss 66213.648438
+2022-07-21 08:28:11,226 (Elapsed: 00:04:58) epoch 136
+2022-07-21 08:28:12,616 (Elapsed: 00:05:00) train_loss 66306.179688
+2022-07-21 08:28:12,617 (Elapsed: 00:05:00) epoch 137
+2022-07-21 08:28:13,974 (Elapsed: 00:05:01) train_loss 66378.359375
+2022-07-21 08:28:13,975 (Elapsed: 00:05:01) epoch 138
+2022-07-21 08:28:15,334 (Elapsed: 00:05:02) train_loss 65815.210938
+2022-07-21 08:28:15,335 (Elapsed: 00:05:02) epoch 139
+2022-07-21 08:28:16,713 (Elapsed: 00:05:04) train_loss 66129.148438
+2022-07-21 08:28:20,329 (Elapsed: 00:05:07) val, step: 2, NELBO: 67051.515625, neg Log p 66961.085938
+2022-07-21 08:28:20,329 (Elapsed: 00:05:07) valid bpd nelbo 0.492019
+2022-07-21 08:28:20,329 (Elapsed: 00:05:07) valid bpd log p 0.491356
+2022-07-21 08:28:20,332 (Elapsed: 00:05:07) epoch 140
+2022-07-21 08:28:21,706 (Elapsed: 00:05:09) train_loss 65943.875000
+2022-07-21 08:28:21,707 (Elapsed: 00:05:09) saving the model at milestone epochs.
+2022-07-21 08:28:21,826 (Elapsed: 00:05:09) epoch 141
+2022-07-21 08:28:23,186 (Elapsed: 00:05:10) train_loss 65952.031250
+2022-07-21 08:28:23,187 (Elapsed: 00:05:10) epoch 142
+2022-07-21 08:28:24,543 (Elapsed: 00:05:12) train_loss 65883.289062
+2022-07-21 08:28:24,544 (Elapsed: 00:05:12) epoch 143
+2022-07-21 08:28:25,937 (Elapsed: 00:05:13) train_loss 66276.500000
+2022-07-21 08:28:25,938 (Elapsed: 00:05:13) epoch 144
+2022-07-21 08:28:27,315 (Elapsed: 00:05:14) train_loss 65701.203125
+2022-07-21 08:28:30,932 (Elapsed: 00:05:18) val, step: 2, NELBO: 66747.335938, neg Log p 66654.210938
+2022-07-21 08:28:30,933 (Elapsed: 00:05:18) valid bpd nelbo 0.489787
+2022-07-21 08:28:30,933 (Elapsed: 00:05:18) valid bpd log p 0.489104
+2022-07-21 08:28:30,936 (Elapsed: 00:05:18) saving the model.
+2022-07-21 08:28:31,075 (Elapsed: 00:05:18) epoch 145
+2022-07-21 08:28:32,463 (Elapsed: 00:05:20) train_loss 66268.484375
+2022-07-21 08:28:32,464 (Elapsed: 00:05:20) epoch 146
+2022-07-21 08:28:33,825 (Elapsed: 00:05:21) train_loss 65701.906250
+2022-07-21 08:28:33,826 (Elapsed: 00:05:21) epoch 147
+2022-07-21 08:28:35,209 (Elapsed: 00:05:22) train_loss 65835.046875
+2022-07-21 08:28:35,210 (Elapsed: 00:05:22) epoch 148
+2022-07-21 08:28:36,622 (Elapsed: 00:05:24) train_loss 66064.093750
+2022-07-21 08:28:36,623 (Elapsed: 00:05:24) epoch 149
+2022-07-21 08:28:37,758 (Elapsed: 00:05:25) train 299 66267.218750
+2022-07-21 08:28:37,994 (Elapsed: 00:05:25) train_loss 66267.218750
+2022-07-21 08:28:41,628 (Elapsed: 00:05:29) val, step: 2, NELBO: 66877.750000, neg Log p 66770.843750
+2022-07-21 08:28:41,628 (Elapsed: 00:05:29) valid bpd nelbo 0.490744
+2022-07-21 08:28:41,628 (Elapsed: 00:05:29) valid bpd log p 0.489960
+2022-07-21 08:28:41,631 (Elapsed: 00:05:29) epoch 150
+2022-07-21 08:28:42,994 (Elapsed: 00:05:30) train_loss 65798.367188
+2022-07-21 08:28:42,995 (Elapsed: 00:05:30) epoch 151
