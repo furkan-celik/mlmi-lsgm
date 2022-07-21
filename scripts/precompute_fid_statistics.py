@@ -16,7 +16,7 @@ def main(args):
     device = 'cuda'
     dims = 2048
     # for binary datasets including MNIST and OMNIGLOT, we don't apply binarization for FID computation
-    train_queue, valid_queue, _ = get_loaders_eval(args.dataset, args.data, args.distributed,
+    train_queue, valid_queue, _ = get_loaders_eval(args.dataset, args.data, args.resize, args.crop, args.distributed,
                                                    args.batch_size, augment=False, drop_last_train=False,
                                                    shuffle_train=True, binarize_binary_datasets=False)
     print('len train queue', len(train_queue), 'len val queue', len(valid_queue), 'batch size', args.batch_size)
@@ -35,7 +35,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser('')
     parser.add_argument('--dataset', type=str, default='cifar10',
                         choices=['cifar10', 'celeba_64', 'celeba_256', 'omniglot', 'mnist',
-                                 'imagenet_32', 'ffhq', 'lsun_bedroom_128', 'lsun_church_256'],
+                                 'imagenet_32', 'ffhq', 'lsun_bedroom_128', 'lsun_church_256',
+                                 'retina'],
                         help='which dataset to use')
     parser.add_argument('--data', type=str, default='/tmp/nvae-diff/data',
                         help='location of the data corpus')
