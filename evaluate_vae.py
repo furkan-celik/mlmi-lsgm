@@ -66,7 +66,7 @@ def main(eval_args):
 
         if eval_args.nll_eval:
             # load train valid queue
-            bpd_coeff = utils.get_bpd_coeff(args.dataset)
+            bpd_coeff = utils.get_bpd_coeff(args.dataset, args.crop)
             train_queue, valid_queue, num_classes = datasets.get_loaders(args)
 
             if eval_args.eval_on_train:

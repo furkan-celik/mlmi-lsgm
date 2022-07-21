@@ -44,6 +44,7 @@ class NCSNpp(nn.Module):
     super().__init__()
     self.act = act = nn.SiLU()
     self.dataset = args.dataset
+    self.size = args.crop
     self.num_scales = args.num_scales_dae
     self.num_input_channels = num_input_channels
 
@@ -55,7 +56,7 @@ class NCSNpp(nn.Module):
     resamp_with_conv = True    # always True in the original codebase
     self.num_resolutions = num_resolutions = self.num_scales
     assert len(ch_mult) == self.num_scales
-    self.input_size = get_input_size(self.dataset) // 2 ** (args.num_preprocess_blocks + args.num_latent_scales - 1)
+    self.input_size = get_input_size(self.dataset, self.size) // 2 ** (args.num_preprocess_blocks + args.num_latent_scales - 1)
     self.all_resolutions = all_resolutions = [self.input_size // (2 ** i) for i in range(num_resolutions)]
 
     self.mixed_prediction = args.mixed_prediction  # This enables mixed prediction

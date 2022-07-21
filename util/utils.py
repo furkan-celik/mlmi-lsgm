@@ -401,7 +401,7 @@ def broadcast_params(params, is_distributed):
             dist.broadcast(param.data, src=0)
 
 
-def num_output(dataset):
+def num_output(dataset, size):
     if dataset in {'mnist',  'omniglot'}:
         return 28 * 28
     elif dataset == 'cifar10':
@@ -411,11 +411,13 @@ def num_output(dataset):
         return 3 * size * size
     elif dataset == 'ffhq':
         return 3 * 256 * 256
+    elif dataset == 'retina':
+        return size * size
     else:
         raise NotImplementedError
 
 
-def get_input_size(dataset):
+def get_input_size(dataset, size=None):
     if dataset in {'mnist', 'omniglot'}:
         return 32
     elif dataset == 'cifar10':
@@ -425,12 +427,14 @@ def get_input_size(dataset):
         return size
     elif dataset == 'ffhq':
         return 256
+    elif dataset == 'retina':
+        return size
     else:
         raise NotImplementedError
 
 
-def get_bpd_coeff(dataset):
-    n = num_output(dataset)
+def get_bpd_coeff(dataset, size):
+    n = num_output(dataset, size)
     return 1. / np.log(2.) / n
 
 
@@ -446,6 +450,8 @@ def get_channel_multiplier(dataset, num_scales):
             mult = (1, 1, 2, 2, 2)  # used for prior at 64
     elif dataset == 'mnist':
         mult = (1, 1)
+    elif dataset == 'retina':
+        mult = (1, 1)
     else:
         raise NotImplementedError
 
@@ -459,6 +465,8 @@ def get_attention_scales(dataset):
         # attn = (False, True, False, False) # used for 32
         attn = (False, False, True, False, False)  # used for 64
     elif dataset == 'mnist':
+        attn = (True, False)
+    elif dataset == 'retina':
         attn = (True, False)
     else:
         raise NotImplementedError
@@ -735,7 +743,7 @@ def different_p_q_objectives(iw_sample_p, iw_sample_q):
 def decoder_output(dataset, logits, fixed_log_scales=None):
     if dataset in {'cifar10', 'celeba_64', 'celeba_256', 'imagenet_32', 'imagenet_64', 'ffhq',
                    'lsun_bedroom_128', 'lsun_bedroom_256', 'mnist', 'omniglot',
-                   'lsun_church_256'}:
+                   'lsun_church_256', 'retina'}:
         return PixelNormal(logits, fixed_log_scales)
     else:
         raise NotImplementedError

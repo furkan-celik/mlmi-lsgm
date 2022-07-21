@@ -111,7 +111,7 @@ def main(eval_args):
             args.batch_size = eval_args.batch_size
 
         # load train valid queue
-        bpd_coeff = utils.get_bpd_coeff(args.dataset)
+        bpd_coeff = utils.get_bpd_coeff(args.dataset, args.crop)
         train_queue, valid_queue, num_classes = datasets.get_loaders(args)
 
         if eval_args.eval_on_train:
