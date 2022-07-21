@@ -20,6 +20,7 @@ class NVAE(nn.Module):
         super(NVAE, self).__init__()
         self.arch_instance = arch_instance
         self.dataset = args.dataset
+        self.size = args.crop
         self.crop_output = self.dataset in {'mnist', 'omniglot'}
         self.log_sig_q_scale = torch.Tensor([args.log_sig_q_scale]).cuda()
         self.num_bits = args.num_x_bits
@@ -46,7 +47,7 @@ class NVAE(nn.Module):
         self.progressive_input = args.progressive_input_vae
 
         # general cell parameters
-        self.input_size = get_input_size(self.dataset)
+        self.input_size = get_input_size(self.dataset, self.size)
 
         # decoder param
         self.num_mix_output = 10
