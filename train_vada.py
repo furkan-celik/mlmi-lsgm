@@ -12,6 +12,7 @@ import os
 
 from torch.multiprocessing import Process
 from torch.cuda.amp import autocast, GradScaler
+from tqdm import tqdm
 
 from nvae import NVAE
 from diffusion_discretized import DiffusionDiscretized
@@ -139,7 +140,7 @@ def main(args):
     else:
         global_step, epoch, init_epoch, best_score_fid, best_score_nll = 0, 0, 0, 1e10, 1e10
 
-    for epoch in range(init_epoch, args.epochs):
+    for epoch in tqdm(range(init_epoch, args.epochs), desc="Epochs"):
         # update lrs.
         if args.distributed:
             train_queue.sampler.set_epoch(global_step + args.seed)

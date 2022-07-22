@@ -57,6 +57,7 @@ import torchvision.transforms as TF
 from scipy import linalg
 from torch.nn.functional import adaptive_avg_pool2d
 from PIL import Image
+import albumentations as A
 
 from fid.inception import InceptionV3
 
@@ -85,6 +86,8 @@ class ImagesPathDataset(torch.utils.data.Dataset):
     def __getitem__(self, i):
         path = self.files[i]
         img = Image.open(path).convert('RGB')
+        if img.width != 256 or img.height != 256:
+            img = A.Compose([A.SmallestMaxSize(max_size=256), A.CenterCrop(height=256, width=256)])(image=np.array(img))["image"]
         if self.transforms is not None:
             img = self.transforms(img)
         return img
@@ -138,7 +141,7 @@ def get_activations(files, model, batch_size=50, dims=2048, device='cpu', max_sa
             batch = batch.repeat(1, 3, 1, 1)
 
         with torch.no_grad():
-            pred = model(batch)[0]
+            pred = model(batch.to(device))[0]
 
         # If model output is not scalar, apply global spatial average pooling.
         # This happens if you choose a dimensionality not equal 2048.
@@ -247,7 +250,8 @@ def _compute_statistics_of_path(path, model, batch_size, dims, device):
         f.close()
     else:
         path = pathlib.Path(path)
-        files = list(path.glob('*.jpg')) + list(path.glob('*.png'))
+        files = list(path.glob('**/*.jpg')) + list(path.glob('**/*.jpeg')) + list(path.glob('**/*.png'))
+        
         m, s = calculate_activation_statistics(files, model, batch_size,
                                                dims, device)
 
