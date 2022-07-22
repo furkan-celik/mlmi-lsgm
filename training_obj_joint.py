@@ -6,6 +6,7 @@
 # ---------------------------------------------------------------
 
 import torch
+from tqdm import tqdm
 
 from util import utils
 from torch.cuda.amp import autocast
@@ -23,7 +24,7 @@ def train_vada_joint(train_queue, diffusion, dae, dae_optimizer, vae, vae_optimi
 
     dae.train()
     vae.train()
-    for step, x in enumerate(train_queue):
+    for step, x in tqdm(enumerate(train_queue), desc="Steps"):
         # warm-up lr
         update_lr(args, global_step, warmup_iters, dae_optimizer, vae_optimizer)
         x = utils.common_x_operations(x, args.num_x_bits)

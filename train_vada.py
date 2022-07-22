@@ -12,6 +12,7 @@ import os
 
 from torch.multiprocessing import Process
 from torch.cuda.amp import autocast, GradScaler
+from tqdm import tqdm
 
 from nvae import NVAE
 from diffusion_discretized import DiffusionDiscretized
@@ -139,7 +140,7 @@ def main(args):
     else:
         global_step, epoch, init_epoch, best_score_fid, best_score_nll = 0, 0, 0, 1e10, 1e10
 
-    for epoch in range(init_epoch, args.epochs):
+    for epoch in tqdm(range(init_epoch, args.epochs), desc="Epochs"):
         # update lrs.
         if args.distributed:
             train_queue.sampler.set_epoch(global_step + args.seed)
@@ -186,33 +187,34 @@ def main(args):
         eval_freq_fid = max(args.epochs // num_evaluations_fid, 1)
         save_freq = max(args.epochs // num_saves, 1)
 
+        fast_ode_param = {'ode_eps': args.train_ode_eps, 'ode_solver_tol': args.train_ode_solver_tol}
+        dae.eval()
+        vae.eval()
+        # switch to EMA parameters
+        dae_optimizer.swap_parameters_with_ema(store_params_in_ema=True)
+
+        # generate samples
+        n = int(np.floor(np.sqrt(min(64, args.batch_size))))  # cannot generate too many samples on big datasets
+        num_samples = n ** 2
+        samples_disc, _, _, _ = generate_samples_vada(dae, diffusion_disc, vae, num_samples,\
+            enable_autocast=args.autocast_eval,\
+                prior_var=args.sigma2_max if args.sde_type == 'vesde' else 1.0)
+        samples_disc = utils.tile_image(samples_disc, n)
+        writer.add_image('generated_disc', samples_disc, global_step)
+        samples_ode, nfe, _, _ = generate_samples_vada(dae, diffusion_cont, vae, num_samples,\
+            enable_autocast=args.autocast_eval,\
+                ode_eps=fast_ode_param['ode_eps'],\
+                    ode_solver_tol=fast_ode_param['ode_solver_tol'],\
+                        ode_sample=True,\
+                            prior_var=args.sigma2_max if args.sde_type == 'vesde' else 1.0)
+        samples_ode = utils.tile_image(samples_ode, n)
+        writer.add_image('generated_ode', samples_ode, global_step)
+        writer.add_scalar('ode_sampling_nfe/single_batch', nfe, global_step)
+        logging.info('sampled new images using ODE framework with {} func. evaluations (ode error tol.: {}, ode eps: {})'.format(nfe, fast_ode_param['ode_solver_tol'],\
+             fast_ode_param['ode_eps']))
+
+
         if (epoch + 1) % eval_freq_nll == 0 or (epoch + 1) % eval_freq_fid == 0 or epoch == (args.epochs - 1):
-            fast_ode_param = {'ode_eps': args.train_ode_eps, 'ode_solver_tol': args.train_ode_solver_tol}
-            dae.eval()
-            vae.eval()
-            # switch to EMA parameters
-            dae_optimizer.swap_parameters_with_ema(store_params_in_ema=True)
-
-            # generate samples
-            n = int(np.floor(np.sqrt(min(64, args.batch_size))))  # cannot generate too many samples on big datasets
-            num_samples = n ** 2
-            samples_disc, _, _, _ = generate_samples_vada(dae, diffusion_disc, vae, num_samples,
-                                                             enable_autocast=args.autocast_eval,
-                                                             prior_var=args.sigma2_max if args.sde_type == 'vesde' else 1.0)
-            samples_disc = utils.tile_image(samples_disc, n)
-            writer.add_image('generated_disc', samples_disc, global_step)
-            samples_ode, nfe, _, _ = generate_samples_vada(dae, diffusion_cont, vae, num_samples,
-                                                             enable_autocast=args.autocast_eval,
-                                                             ode_eps=fast_ode_param['ode_eps'],
-                                                             ode_solver_tol=fast_ode_param['ode_solver_tol'],
-                                                             ode_sample=True,
-                                                             prior_var=args.sigma2_max if args.sde_type == 'vesde' else 1.0)
-            samples_ode = utils.tile_image(samples_ode, n)
-            writer.add_image('generated_ode', samples_ode, global_step)
-            writer.add_scalar('ode_sampling_nfe/single_batch', nfe, global_step)
-            logging.info('sampled new images using ODE framework with {} func. evaluations (ode error tol.: {}, ode eps: {})'
-                         .format(nfe, fast_ode_param['ode_solver_tol'], fast_ode_param['ode_eps']))
-
             if (epoch + 1) % eval_freq_nll == 0 or epoch == (args.epochs - 1):
                 # NLL calculation (ODE-based)
                 neg_log_p_ode, _, nfe_nll_ode, _, _ = elbo_evaluation(valid_queue, diffusion_cont, dae, args, vae,
