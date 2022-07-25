@@ -57,6 +57,7 @@ import torchvision.transforms as TF
 from scipy import linalg
 from torch.nn.functional import adaptive_avg_pool2d
 from PIL import Image
+from tqdm import tqdm
 import albumentations as A
 
 from fid.inception import InceptionV3
@@ -131,7 +132,7 @@ def get_activations(files, model, batch_size=50, dims=2048, device='cpu', max_sa
     total_processed = 0
 
     print('Starting to sample.')
-    for batch in dl:
+    for batch in tqdm(dl, desc="Sampling"):
         # ignore labels
         if isinstance(batch, list):
             batch = batch[0]

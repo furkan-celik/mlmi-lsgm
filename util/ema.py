@@ -18,6 +18,7 @@ class EMA(Optimizer):
         self.optimizer = opt
         self.state = opt.state
         self.param_groups = opt.param_groups
+        self.defaults = {}
 
     def step(self, *args, **kwargs):
         retval = self.optimizer.step(*args, **kwargs)

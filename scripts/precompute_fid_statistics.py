@@ -12,7 +12,7 @@ from fid.inception import InceptionV3
 from itertools import chain
 
 
-def main(args):
+def precompute_fid_statistics(args, compute_only_valid = False):
     device = 'cuda'
     dims = 2048
     # for binary datasets including MNIST and OMNIGLOT, we don't apply binarization for FID computation
@@ -20,8 +20,10 @@ def main(args):
                                                    args.batch_size, augment=False, drop_last_train=False,
                                                    shuffle_train=True, binarize_binary_datasets=False)
     print('len train queue', len(train_queue), 'len val queue', len(valid_queue), 'batch size', args.batch_size)
-    if args.dataset in {'celeba_256', 'omniglot'}:
+    if args.dataset in {'celeba_256', 'omniglot'} and not compute_only_valid:
         train_queue = chain(train_queue, valid_queue)
+    elif compute_only_valid:
+        train_queue = valid_queue
 
     block_idx = InceptionV3.BLOCK_INDEX_BY_DIM[dims]
     model = InceptionV3([block_idx], model_dir=args.fid_dir).to(device)
@@ -50,4 +52,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args.distributed = False
 
-    main(args)
+    precompute_fid_statistics(args)

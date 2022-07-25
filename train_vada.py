@@ -13,10 +13,12 @@ import os
 from torch.multiprocessing import Process
 from torch.cuda.amp import autocast, GradScaler
 from tqdm import tqdm
+from fid.fid_score import calculate_activation_statistics
 
 from nvae import NVAE
 from diffusion_discretized import DiffusionDiscretized
 from diffusion_continuous import make_diffusion
+from scripts.precompute_fid_statistics import precompute_fid_statistics
 try:
     from apex.optimizers import FusedAdam
 except ImportError:
@@ -180,11 +182,9 @@ def main(args):
         writer.add_scalar('train/loss_epoch', train_obj, global_step)
 
         # generate samples less frequently
-        num_evaluations_nll = 1
-        num_evaluations_fid = 1
         num_saves = 100           # more frequent saves
-        eval_freq_nll = max(args.epochs // num_evaluations_nll, 1)
-        eval_freq_fid = max(args.epochs // num_evaluations_fid, 1)
+        eval_freq_nll = max(args.eval_freq_nll, 1)
+        eval_freq_fid = max(args.eval_freq_fid, 1)
         save_freq = max(args.epochs // num_saves, 1)
 
         fast_ode_param = {'ode_eps': args.train_ode_eps, 'ode_solver_tol': args.train_ode_solver_tol}
@@ -238,6 +238,13 @@ def main(args):
             if (epoch + 1) % eval_freq_fid == 0 or epoch == (args.epochs - 1):
                 # FID calculation (ODE-based)
                 num_fid_samples = 2500  # use small number of samples for FID calculation during training
+
+                path = os.path.join(args.fid_dir, args.dataset + '.npz')
+
+                if os.path.isfile(path):
+                    logging.warn("NPZ file for precomputed mean and mü values are not found. Computing values for dataset")
+                    precompute_fid_statistics(args, True)
+
                 val_fid_ema = test_dae_fid(dae, diffusion_cont, writer, logging, args, num_fid_samples, vae,
                                            ode_param_dict=fast_ode_param)
                 logging.info('valid FID (ODE-based) {} (ode error tol.: {}, ode eps: {})'.format(
@@ -297,14 +304,19 @@ def main(args):
     writer.add_scalar('final_val/disc_elbo_bpd', elbo_disc * bpd_coeff, epoch)
     writer.add_scalar('final_val/disc_elbo_nat', elbo_disc, epoch)
 
+    path = os.path.join(args.fid_dir, args.dataset + '.npz')
+
+    if os.path.isfile(path):
+        logging.warn("NPZ file for precomputed mean and mü values are not found. Computing values for dataset")
+        precompute_fid_statistics(args, True)
+
     # FID calculation (using discretized sampling)
-    num_fid_samples = 50000
-    val_fid_ema_disc = test_dae_fid(dae, diffusion_disc, writer, logging, args, num_fid_samples, vae)
+    val_fid_ema_disc = test_dae_fid(dae, diffusion_disc, writer, logging, args, args.num_fid_samples_final, vae)
     logging.info('final valid FID (discretized) %f', val_fid_ema_disc)
     writer.add_scalar('final_val/disc_fid', val_fid_ema_disc, epoch)
 
     # FID calculation (using ODE-based sampling)
-    val_fid_ema_ode = test_dae_fid(dae, diffusion_cont, writer, logging, args, num_fid_samples, vae, eval_ode_param)
+    val_fid_ema_ode = test_dae_fid(dae, diffusion_cont, writer, logging, args, args.num_fid_samples_final, vae, eval_ode_param)
     logging.info('final valid FID (ODE-based) {} (ode error tol.: {}, ode eps: {})'.format(
         val_fid_ema_ode, eval_ode_param['ode_solver_tol'], eval_ode_param['ode_eps']))
     writer.add_scalar('final_val/ode_fid', val_fid_ema_ode, epoch)
@@ -359,6 +371,8 @@ if __name__ == '__main__':
                         help='This flag enables training from an existing checkpoint.')
     parser.add_argument('--grad_clip_max_norm', type=float, default=0.,
                         help='The maximum norm used in gradient norm clipping (0 applies no clipping).')
+    parser.add_argument("--eval_freq_nll", type=int, default=5, help="Frequency of nll calculation, like once in every n epoch.")
+    parser.add_argument("--eval_freq_fid", type=int, default=5, help="Frequency of fid calculation, like once in every n epoch.")
     # Diffusion
     parser.add_argument('--learning_rate_dae', type=float, default=3e-4,
                         help='init learning rate')
@@ -416,6 +430,8 @@ if __name__ == '__main__':
     parser.add_argument('--embedding_scale', type=float, default=1.,
                         # 'fourier':16, 'positional':1000, backward compatible: 1.
                         help='Embedding scale that is used for rescaling time')
+    parser.add_argument("--num_fid_samples_final", type=int, default=1000, help="Number of samples used on final evaluations")
+    parser.add_argument("--max_sample", type=int, default=250, help="Number of samples used for FID calculation on eval")
     # NCSN++
     parser.add_argument('--dae_arch', type=str, default='unet', choices=['ncsnpp'],
                         help='Switch between different DAE architectures.')
@@ -490,7 +506,7 @@ if __name__ == '__main__':
     parser.add_argument('--master_address', type=str, default='127.0.0.1',
                         help='address for master')
     parser.add_argument('--seed', type=int, default=1,
-                        help='seed used for initialization')
+                        help='seed used for initialization')                        
     args = parser.parse_args()
     args.save = args.root + '/' + args.save
     utils.create_exp_dir(args.save)
