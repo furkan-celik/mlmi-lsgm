@@ -10,6 +10,8 @@ import torch
 import numpy as np
 import os
 
+from tqdm import tqdm
+
 from fid.fid_score import compute_statistics_of_generator, load_statistics, calculate_frechet_distance
 from fid.inception import InceptionV3
 
@@ -80,7 +82,7 @@ def main(args):
     milestones = [0.5, 0.7]
     milestones_epochs = set([int(args.epochs * m) for m in milestones])
 
-    for epoch in range(init_epoch, args.epochs):
+    for epoch in tqdm(range(init_epoch, args.epochs), desc="VAE Train"):
         # update lrs.
         if args.distributed:
             train_queue.sampler.set_epoch(global_step + args.seed)

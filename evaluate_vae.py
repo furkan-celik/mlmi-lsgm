@@ -99,6 +99,44 @@ def main(eval_args):
         plt.imshow(output_tiled.cpu().permute(1, 2, 0).numpy())
         save_image(output_tiled, eval_args.save + '/vae_samples.png')
         logging.info('Saved at: {}'.format(eval_args.save + '/vae_samples.png'))
+    elif eval_args.eval_mode == "reconstruct":
+        _, valid_queue, _ = datasets.get_loaders(args)
+
+        output_imgs = None
+        original_imgs = None
+
+        for step, x in enumerate(valid_queue):
+            x = utils.common_x_operations(x, args.num_x_bits)
+
+            output_img = vae.sample(num_samples=num_samples, t=1., x=x)
+
+            if output_img is None:
+                output_imgs = output_img
+                original_imgs = x
+            else:
+                output_imgs = torch.cat([output_imgs, output_img], dim=0)
+                original_imgs = torch.cat([original_imgs, x], dim=0)
+            
+            if output_imgs.size(0) > n * m:
+                output_imgs = output_imgs[0:n*m]
+                original_imgs = original_imgs[0:n*m]
+                break
+            elif output_imgs.size(0) == n * m:
+                break
+            #output_img = outputs
+        output_tiled = utils.tile_image(output_imgs, n, m)
+
+        plt.rcParams['figure.figsize'] = (12, 12)
+        plt.imshow(output_tiled.cpu().permute(1, 2, 0).detach().numpy())
+        save_image(output_tiled, eval_args.save + '/vae_samples.png')
+        logging.info('Saved at: {}'.format(eval_args.save + '/vae_samples.png'))
+
+        output_tiled = utils.tile_image(original_imgs, n, m)
+
+        plt.rcParams['figure.figsize'] = (12, 12)
+        plt.imshow(output_tiled.cpu().permute(1, 2, 0).numpy())
+        save_image(output_tiled, eval_args.save + '/vae_input.png')
+        logging.info('Saved at: {}'.format(eval_args.save + '/vae_input.png'))
 
 
 
@@ -111,7 +149,7 @@ if __name__ == '__main__':
                         help='location of the results')
     parser.add_argument('--save', type=str, default='debug_ode',
                         help='id used for storing intermediate results')
-    parser.add_argument('--eval_mode', type=str, default='evaluate', choices=['sample', 'evaluate'],
+    parser.add_argument('--eval_mode', type=str, default='evaluate', choices=['sample', 'evaluate', "reconstruct"],
                         help='evaluation mode. you can choose between sample or evaluate.')
     parser.add_argument('--nll_eval', action='store_true', default=False,
                         help='if True, we perform NLL evaluation.')

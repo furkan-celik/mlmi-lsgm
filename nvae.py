@@ -299,37 +299,40 @@ class NVAE(nn.Module):
 
         return logits, all_log_q, all_eps
 
-    def sample(self, num_samples, t, eps_z=None, enable_autocast=False):
+    def sample(self, num_samples, t, x=None, eps_z=None, enable_autocast=False):
         with torch.no_grad():
             with autocast(enable_autocast):
-                num_eps_z_given = len(eps_z) if eps_z is not None else 0
+                if x is None:
+                    num_eps_z_given = len(eps_z) if eps_z is not None else 0
 
-                # z = self.eps_conv[0](eps)
-                s = self.prior_ftr0.unsqueeze(0)
-                s = s.expand(num_samples, -1, -1, -1)
-                idx_dec = 0
-                for cell in self.dec_tower:
-                    if cell.cell_type == 'combiner_dec':
-                        if idx_dec < num_eps_z_given:
-                            eps = eps_z[idx_dec]
+                    # z = self.eps_conv[0](eps)
+                    s = self.prior_ftr0.unsqueeze(0)
+                    s = s.expand(num_samples, -1, -1, -1)
+                    idx_dec = 0
+                    for cell in self.dec_tower:
+                        if cell.cell_type == 'combiner_dec':
+                            if idx_dec < num_eps_z_given:
+                                eps = eps_z[idx_dec]
+                            else:
+                                b, _, h, w = s.shape
+                                size = [b, self.num_latent_per_group, h, w]
+                                dist = Normal(mu=torch.zeros(size=size, device='cuda'),
+                                            log_sigma=torch.zeros(size=size, device='cuda'))
+                                eps, _ = dist.sample(t=t)
+
+                            z = self.eps_conv[idx_dec](eps)
+                            s = cell(s, z)
+                            idx_dec += 1
                         else:
-                            b, _, h, w = s.shape
-                            size = [b, self.num_latent_per_group, h, w]
-                            dist = Normal(mu=torch.zeros(size=size, device='cuda'),
-                                          log_sigma=torch.zeros(size=size, device='cuda'))
-                            eps, _ = dist.sample(t=t)
+                            # main decoder tower
+                            s = cell(s)
 
-                        z = self.eps_conv[idx_dec](eps)
-                        s = cell(s, z)
-                        idx_dec += 1
-                    else:
-                        # main decoder tower
+                    for cell in self.post_process:
                         s = cell(s)
 
-                for cell in self.post_process:
-                    s = cell(s)
-
-                logits = self.image_conditional(s)
+                    logits = self.image_conditional(s)
+                else:
+                    logits, _, _ = self.forward(x)
 
                 output = self.decoder_output(logits)
                 output_img = output.mean()
